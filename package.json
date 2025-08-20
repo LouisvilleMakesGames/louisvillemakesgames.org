@@ -16,8 +16,9 @@
     "open": "^10.1.0"
   },
 "scripts": {
-  "start": "node static-site-generator && http-server ../lmg-live-site & open http://localhost:8080",
-  "serve": "http-server dest"
+  "build": "node static-site-generator",
+  "start": "node static-site-generator && http-server serve",
+  "serve": "http-server serve"
 }
 
 }

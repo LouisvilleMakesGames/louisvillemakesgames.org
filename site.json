@@ -50,6 +50,11 @@
       "showInNav": true
     },
     {
+      "name": "Fund",
+      "file": "fund.html",
+      "showInNav": false
+    },
+    {
       "name": "History",
       "file": "history.html",
       "showInNav": false

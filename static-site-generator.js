@@ -11,6 +11,8 @@ var dest = "./" + config.dest;
 makeDirIfNotExist(dest);
 makeDirIfNotExist(path.join(dest, "css"));
 copydir.sync(path.join(src, "css"), path.join(dest, "css"));
+makeDirIfNotExist(path.join(dest, "js"));
+copydir.sync(path.join(src, "js"), path.join(dest, "js"));
 makeDirIfNotExist(path.join(dest, "img"));
 copydir.sync(path.join(src, "img"), path.join(dest, "img"));
 makeDirIfNotExist(path.join(dest, "icons"));
