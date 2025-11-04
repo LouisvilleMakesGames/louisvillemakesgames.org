@@ -1,0 +1,319 @@
+body{
+  margin: 0;
+  background: black !important;
+}
+.save-wz-banner {
+  position: relative; /* root stacking context */
+
+  background: url('https://louisvillemakesgames.org/img/comic-dots-banner.png') no-repeat center top / 100% auto;
+  overflow-x: hidden;
+}
+
+/* keep the container positioned, but DO NOT give it a z-index */
+.save-wz-banner-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* TEXT: must be positioned for z-index to work */
+.save-wz-banner-text {
+  position: absolute;          /* <-- add this */
+  z-index: 30;                 /* highest */
+  top: 20px;
+  left: 40px;
+  width: 450px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 95%;
+  text-shadow:
+    0 0 5px rgba(255, 0, 0, 0.6),
+    0 0 10px rgba(255, 0, 0, 0.5),
+    0 0 20px rgba(255, 0, 0, 0.4),
+    0 0 40px rgba(255, 0, 0, 0.3);
+}
+
+/* GROUP: place the image + bolts in one positioned wrapper */
+.megaphone-container{
+  position: absolute;
+  z-index: 10;                 /* behind bolts and text */
+  top: -70px !important;
+ left: 150px;
+}
+
+/* MEGAPHONE: keep transform, but its z-index only matters within container */
+.megaphone{
+  position: absolute;
+  z-index: 1;                  /* back-most inside container */
+
+  transform: rotate(76deg) scale(50%);
+}
+
+/* BOLTS: above the megaphone, still inside the same container */
+.bolt1, .bolt2{
+  position: absolute;
+  z-index: 20;                 /* above megaphone, below text */
+}
+
+.bolt1{
+  top: 60px;
+  left: 250px;
+  transform: rotate(90deg) scale(30%);
+}
+
+.bolt2{
+  top: -90px;
+  left: 290px;
+  transform: rotate(45deg) scale(35%);
+}
+
+
+.left-banner{
+  height: 200px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media only screen and (max-width: 991px) {
+}
+@media only screen and (max-width: 767px) {
+
+}
+@media only screen and (max-width: 575px) {
+}
+@media only screen and (max-width: 480px) {
+}
+
+
+.anim-floaty {
+  animation: floatUp 4s ease-in-out infinite,
+             floatDown 4s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-15px); }
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(15px); }
+}
+
+.anim-choppy {
+
+  animation: choppyRotate 1s steps(2) infinite;
+}
+
+@keyframes choppyRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(15deg); }
+}
+
+
+
+.save-wz-banner {
+  color: white !important;
+}
+
+
+
+h2{
+ color: white !important;
+}
+
+.banner-right{
+  z-index: 2000;
+  background: rgba(0,0,0,0.4);
+  min-height: 200px;
+}
+
+.blip-text-container{
+   height: 120px;
+padding-top: 30px;
+}
+
+ #blip-text {
+
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+   font-size: 25px !important;
+   text-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+   
+  }
+
+.donate-button {
+  display: inline-block;
+  padding: 14px 28px !important;
+  background: linear-gradient(to bottom, #ff4b5c, #c71c2c); /* red gradient */
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #8b131f, /* bottom edge */
+              0 6px 15px rgba(0,0,0,0.3); /* soft shadow */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+.donate-button:hover {
+  background: linear-gradient(to bottom, #ff5c6f, #d62828);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #8b131f,
+              0 10px 20px rgba(0,0,0,0.35);
+}
+
+.donate-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #8b131f,
+              0 4px 10px rgba(0,0,0,0.25);
+}
+
+
+
+.donate-button .sub{
+  font-size: 15px !important;
+  margin: 0!important;
+  padding: 0 !important;
+
+}
+
+.donate-button .big{
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0!important;
+  padding: 0 !important;
+  text-transform: uppercase;
+
+}
+
+
+ .item-card { border-radius: 14px; overflow: hidden; }
+  .thumb { aspect-ratio: 16 / 9; object-fit: cover; background: #222; }
+  .big-emoji{
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1;
+    display: inline-block;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,.35));
+  }
+
+.pill {
+  display: inline-block;
+  padding: 0.75rem 1.5rem; /* larger size */
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7a2cff, #e63946);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover: lift and glow */
+.pill:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35),
+              0 0 12px rgba(122, 44, 255, 0.6);
+}
+
+/* Active: pressed down */
+.pill:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle shine sweep animation */
+.pill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: skewX(-20deg);
+}
+
+.pill:hover::after {
+  animation: shine 0.9s forwards;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+
+  .bar{ height:10px; background:#2a2a2a; border-radius:999px; overflow:hidden; }
+  .bar .progress-bar{ background: linear-gradient(90deg,#a66bff,#ff5a7a); }
+
+    .alert-condensed {
+    padding: .25rem .5rem;
+    margin-bottom: .5rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  .alert-condensed .emoji {
+    margin-right: .4em;
+    font-size: 1.1em;
+    vertical-align: middle;
+  }
+
+
+  .spacer{
+    margin-top: 8px;
+  }
+
+
+
+  .stream-button {
+  display: inline-block;
+  padding: 14px 28px !important;
+  background: linear-gradient(to bottom, #4ba3ff, #1c4cc7); /* blue gradient */
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 0 #13338b, /* bottom edge */
+              0 6px 15px rgba(0,0,0,0.3); /* soft shadow */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+.stream-button:hover {
+  background: linear-gradient(to bottom, #5cafff, #2868d6);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #13338b,
+              0 10px 20px rgba(0,0,0,0.35);
+}
+
+.stream-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #13338b,
+              0 4px 10px rgba(0,0,0,0.25);
+}

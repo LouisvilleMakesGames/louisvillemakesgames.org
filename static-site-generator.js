@@ -30,7 +30,7 @@ function addPageData(data) {
 
 
   newData.site.pages.forEach((page) => {
-    if (page.showInNav){
+  
       if (page.file){
         var pageName = page.file.replace(".html", "").replace("/", "").toLowerCase();
 
@@ -42,7 +42,9 @@ function addPageData(data) {
      } else{
       page.file = page.url;
      }
-   }
+   
+
+   
   });
   
   newData["games"].sort(function(a, b) {

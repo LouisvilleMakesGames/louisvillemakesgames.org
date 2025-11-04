@@ -3,7 +3,7 @@
 
 # Load environment variables from .env
 if [ ! -f .env ]; then
-  echo "🚨 .env file not found! Please create it with the following content:"
+  echo "🚨 .env file not found! Please create it with the following content (below is just example stuff, you will need the reall stuff):"
   echo "--------------------------------------------"
   echo "USERNAME=longegg"
   echo "SERVER=123.4.876.123"

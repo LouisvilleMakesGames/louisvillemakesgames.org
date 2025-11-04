@@ -11,9 +11,14 @@
         "showInNav": true
       },
       {
-        "name": "Local Game Harvest",
-        "file": "local-game-harvest.html",
+        "name": "Local Game Harvest-2025",
+        "file": "local-game-harvest-2025.html",
         "showInNav": true
+      },
+      {
+        "name": "Local Game Harvest-2024",
+        "file": "local-game-harvest-2024.html",
+        "showInNav": false
       },
       {
         "name": "Blog",
@@ -26,7 +31,7 @@
         "showInNav": true
       },
       {
-        "name": "Warpzone",
+        "name": "Warp Zone",
         "file": "warpzone.html",
         "showInNav": true
       },
@@ -85,410 +90,263 @@
     ]
   },
   "index": {},
-  "local-game-harvest": {
+  "local-game-harvest-2025": {
+    "lgh": []
+  },
+  "local-game-harvest-2024": {
     "lgh": [
       {
-        "developer": "Super8BitRafa",
-        "name": "Nun with a Gun",
-        "from": "Lexington Kentucky"
-      },
-      {
-        "Timestamp": "10/7/2024 21:13:29",
         "Email Address": "jacobrafaelestrada@gmail.com",
         "developer": "Super8BitRafa",
-        "Your Discord user ID (optional)": "Super8bitrafa",
-        "name": "Fablelight",
-        "Brief description of your game": "A hand-animated single player 2D fighting game fantasy adventure with a twist. This fairytale-inspired fighter reinvents classic fables with an emphasis on single player content.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "A laptop with two controllers",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "Two controllers and a laptop. The exe will be on the desktop. The controllers are Bluetooth",
-        "from": "Lexington Kentucky",
-        "Controller": "y"
+        "name": "Nun with a Gun",
+        "from": "Lexington, KY"
       },
       {
+        "Email Address": "jacobrafaelestrada@gmail.com",
+        "developer": "Super8BitRafa",
+        "name": "Fablelight",
+        "from": "Lexington, KY"
+      },
+      {
+        "Email Address": "oldflowergames@gmail.com",
         "developer": "oldflowerGames",
         "name": "Emblems: Sunless Vow",
-        "Brief description of your game": "Escape the void, and take back stolen memories, in a turn-based roguelite RPG that’s also a visual novel.",
-        "from": "Lexington KY"
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/8/2024 18:30:20",
         "Email Address": "vaelmatti@gmail.com",
         "developer": "Vael Mattingly",
-        "Your Discord user ID (optional)": "vaelisgay",
         "name": "Peach Boi",
-        "Brief description of your game": "Twin stick action platformer",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Laptop, monitor, keyboard, mouse, controller",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "Launch from executable/steam/godot. Hit new game. To reset hit escape, exit to menu, and hit new gamr",
-        "from": "Lexington Ky",
-        "Controller": "y"
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/10/2024 10:15:59",
         "Email Address": "davisjc22@gmail.com",
         "developer": "Red River Games",
         "Your Discord user ID (optional)": "davisjc22",
         "name": "Raven",
-        "Brief description of your game": "Go to your happy place with Raven: A relaxing, trick-taking card game. Embrace the serene atmosphere while trumping your opponents.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Keyboard and mouse (gameplay is actually just mouse though). I'll try to bring my own Table, monitor, etc. but a projector would be excellent if available.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1VxjCCmBXQ39hUF4KzHz4BQSC-PCMEfteG_9tB2jgwzc/edit?usp=sharing",
-        "from": "Lexington, Kentucky",
-        "Controller": "n"
+        "from": "Lexington, KY"
       },
       {
+        "Email Address": "john@supersoul.co",
         "developer": "Super Soul",
         "name": "Kentucky Dash",
-        "Brief description of your game": "Kentucky Dash is a multiplayer autorunning platformer set in scenic Kentucky. Featuring both competitive and cooperative play, Kentucky Dash supports up to 4 local players as you jump and dash your way around the countryside.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "40+ inch TV or projector with arcade pedestal for the four players. Can also be played with four Xbox controllers.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1oWDqxpoezOV5s9UC6aE3mAgL1Nq04KlcUaWHB3IDjbM/edit?usp=sharing",
-        "from": "Lexington, KY",
-        "Controller": "y"
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/15/2024 9:44:09",
         "Email Address": "davisjc22@gmail.com",
         "developer": "Red River Games",
         "Your Discord user ID (optional)": "davisjc22",
         "name": "Cozy Heights",
-        "Brief description of your game": "A cozy, casual tower building sandbox. Build your tower to attract cute visitors!",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "I’m bringing a laptop to play the game on. It has USB input and HDMI.\nI’ll also provide a keyboard and mouse. For speakers, there are USB ports and a headphone jack. I'll show this at the same booth as my other game submission, Raven.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/19UQv65TvFODs1gR7f95fXh-IO5mnwL5kkhuC8GDa2Q8/edit?usp=sharing",
-        "from": "Lexington, KY",
-        "Controller": ""
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/15/2024 17:23:54",
         "Email Address": "dreamdistillerygames@gmail.com",
         "developer": "Michael Probst and Collin Harris",
         "Your Discord user ID (optional)": "michaelwave",
         "name": "The Magic Bookstore",
-        "Brief description of your game": "A cozy bookshop management game with adventure, story, and magic!",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "I unfortunately have no spare equipment, so I would need to borrow: a computer with at least 4GB ram, and a dedicated GPU (onboard CPU graphics tend to have poor performance with my game), a TV/monitor (size is not important, but preferred in a 16:9 ratio), speakers, and a gamepad controller. More details in the document on the next answer.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "The game should be fairly easy to run. Run \"Magic Bookstore.exe\" and the rest should be smooth sailing! There is no in-game way to quit the game, so having a keyboard handy to alt-tab out is recommended. There is a reset timer so if left unattended, it will go back to the title screen which. You may also use this to your advantage to restart the game if there is an issue. More details on known issues and specification in the following document:\n\nhttps://docs.google.com/document/d/1-67tsj8FP-E3u0zRNGY1Kc7wSSn61jVaQTUmaYNcfG8/edit?usp=sharing\n\nUnfortunately, I will not be able to attend this event.",
-        "from": "Lexington, KY",
-        "Controller": ""
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/17/2024 17:38:54",
         "Email Address": "ndmoda01@yahoo.com",
         "developer": "Nick Modarelli",
         "Your Discord user ID (optional)": "Nick M",
         "name": "Fruit Swarm",
-        "Brief description of your game": "Fast paced puzzle game in which you line up 3 or more of the same fruit to score them. Score longer lines and get a bigger multiplier. If the board fills up with fruit you lose.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "It can run with just keyboard controls but I think it's best with an Xbox controller. Native x-input support for up to 4 players. It will be a Windows .exe, just click and play.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "I'll try to think about it but the only thing I can think would be that if you'd like to restart the game, you can press F4.",
-        "from": "Lexington, KY",
-        "Controller": "y"
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/18/2024 17:45:59",
         "Email Address": "jryvn@yahoo.com",
         "developer": "Bill Adams",
         "Your Discord user ID (optional)": "Jryvn",
         "name": "Fragile Panic",
-        "Brief description of your game": "Action Puzzle",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "I will provide hardware: monitor and arcade stick.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "TBD",
-        "from": "Lexington, KY 40504, USA",
-        "Controller": ""
+        "from": "Lexington, KY"
       },
       {
-        "Timestamp": "10/18/2024 22:07:40",
         "Email Address": "w.scott.nalley@gmail.com",
         "developer": "Scott Nalley",
         "Your Discord user ID (optional)": ".xanthus",
         "name": "Pumpkin Rogue",
-        "Brief description of your game": "A roguelike in which you advance through randomly generated levels in a nightmare realm to escape! Utilize the destructible environment, items, and various abilities that you learn to best your foes and survive.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Arcade Cabinet",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/e/2PACX-1vSOiCRPMKAB9vn01mNOKIu9kdSBfFIYxyEOMbhz0PguVqvSOySWET9b8QTxHblbX6f4pF10t16j1LFF/pub",
-        "from": "Louisville Kentucky",
-        "Controller": ""
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/2/2024 21:26:43",
         "Email Address": "metalknight102@gmail.com",
         "developer": "Jake Jackman",
         "Your Discord user ID (optional)": "MetaJ92",
         "name": "Alablaster",
-        "Brief description of your game": "A Marble/Monkey like with 4 levels to explores. Beat your best time by collecting all the gems! Don't forget the unorthodox physics!",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "You can just throw it on a laptop or PC. It only uses a keyboard.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1mhBaA8uE9A6c5JPJGtSkAkHhIrFp9qMT4QmiOKLY4vI/edit?usp=sharing",
-        "from": "Louisville KY",
-        "Controller": "n"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/17/2024 8:54:09",
         "Email Address": "kurt.a.taylor@gmail.com",
         "developer": "Kurt Taylor",
         "Your Discord user ID (optional)": "kurttaylor",
         "name": "Nib, The Pen is Mightier as a Sword",
-        "Brief description of your game": "Side scrolling fighting platformer made with all pen and ink assets.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "I have a laptop and controller.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "The game will be an executable on the laptop's desktop",
-        "from": "Louisville Ky",
-        "Controller": ""
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/3/2024 15:46:53",
         "Email Address": "jonah12segree@gmail.com",
         "developer": "Jonah Segree",
         "Your Discord user ID (optional)": 668335851851481100,
         "name": "Fatal Fortune",
-        "Brief description of your game": "Play a deadly game of cards against a sinister fortune teller who knows your future.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "The game uses touch controls, I plan to use one of the touch monitors in the space by hooking my Mac laptop to it using HDMI.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1pidbOMK6guIWOGXAv42U5M-IKitxsIgoUYfFVnl_RcM/edit?usp=sharing",
-        "from": "Louisville, Kentucky",
-        "Controller": "n"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "9/29/2024 16:46:58",
         "Email Address": "ctkurt02@louisville.edu",
         "developer": "Carsten Kurtz",
         "Your Discord user ID (optional)": "c2sjk",
         "name": "To Clean The Mountain",
-        "Brief description of your game": "To Clean The Mountain is a platformer where you traverse a mountainous environment by flinging yourself with a trash bag. Enjoy the open environment without guardrails as you persevere towards the summit.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Most likely a pc with both a keyboard and mouse as well as a remote. We should not need to borrow any equipment.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1pQ7lv5XMfAkaztsuDYm3GCoDLePwumJbtrzPlK_J_c0/edit?usp=sharing",
-        "from": "Louisville, Kentucky",
-        "Controller": "y"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/2/2024 22:12:16",
         "Email Address": "alex.garbus@outlook.com",
         "developer": "Alex Garbus",
         "Your Discord user ID (optional)": "alexgarbus",
         "name": "Flewberry",
-        "Brief description of your game": "2D arcade platformer & pet-sim hybrid. Help a virtual pet collect items on a procedurally-generated stage that it can then use to increase its stats and customization options.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Requires a Windows device with keyboard & mouse.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/15MdMVOOUb-fWoXhw6yfPixJ85ZuM9m2XO4Gcxn-LBtA/edit#heading=h.vl0rllg2cuxu",
-        "from": "Louisville, KY",
-        "Controller": "n"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/2/2024 22:14:22",
         "Email Address": "alex.garbus@outlook.com",
         "developer": "Alex Garbus",
         "Your Discord user ID (optional)": "alexgarbus",
         "name": "The Bunnies of Vegetaria",
-        "Brief description of your game": "A simple turn-based RPG. Defeat hordes of enemies to level up and progress through 5 areas.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Requires a Windows, Mac, or Linux device with keyboard & mouse",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/15MdMVOOUb-fWoXhw6yfPixJ85ZuM9m2XO4Gcxn-LBtA/edit#heading=h.3ke45blqfdh",
-        "from": "Louisville, KY",
-        "Controller": "n"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/3/2024 14:52:45",
         "Email Address": "mattfahy07@gmail.com",
         "developer": "Matthew Fahy",
         "Your Discord user ID (optional)": "iron135",
         "name": "Tail Trail",
-        "Brief description of your game": "Race Down the Path and Collect Gems to get your next highest score!",
-        "Describe your gSuper Bug Bash and it is by Aaron Jacob Goodwine and fufroom (Alex Bezuska)ame hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Monitor/Computer/Keyboard/Mouse",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "Game is self running and resetting.",
-        "from": "Louisville, KY",
-        "Controller": "n"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/2/2024 22:08:01",
         "Email Address": "alex.garbus@outlook.com",
         "developer": "Alex Garbus",
         "Your Discord user ID (optional)": "alexgarbus",
         "name": "Eyes of Enigma",
-        "Brief description of your game": "2D pixel art platformer. The demo will consist of an introduction level and 4 main levels that can be played in any order.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Game can run on any Windows device. A device with a dedicated graphics card or AMD integrated graphics would be preferred. Vsync needs to be forced on to avoid screen tearing, and I cannot do this on my Intel UHD laptop.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/15MdMVOOUb-fWoXhw6yfPixJ85ZuM9m2XO4Gcxn-LBtA/edit#heading=h.p7gzda4eqjqo",
-        "from": "Louisville, KY",
-        "Controller": "y"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/2/2024 22:17:33",
         "Email Address": "alex.garbus@outlook.com",
         "developer": "Alex Garbus",
         "Your Discord user ID (optional)": "alexgarbus",
         "name": "The Explors: Pyramid Explorers",
-        "Brief description of your game": "2D top-down arcade game. Explore procedurally-generated dungeons, dodging enemies and collecting as many gems as possible. Supports 1-2 players.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Requires a Windows or Mac device. Can be controlled with either keyboard & mouse or controller.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/15MdMVOOUb-fWoXhw6yfPixJ85ZuM9m2XO4Gcxn-LBtA/edit#heading=h.vtos1oltvlxy",
-        "from": "Louisville, KY",
-        "Controller": "y"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/17/2024 8:55:29",
         "Email Address": "kurt.a.taylor@gmail.com",
         "developer": "Kurt Taylor",
         "Your Discord user ID (optional)": "kurttaylor",
         "name": "Privateers",
-        "Brief description of your game": "Top down actiony RPG where you manage a crew of pirates",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "I have a laptop and controller. There will be a need for a display.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "It will be an executable on the desktop of the PC",
-        "from": "Louisville, Ky",
-        "Controller": ""
+        "from": "Louisville, Ky"
       },
       {
-        "Timestamp": "10/17/2024 21:43:03",
         "Email Address": "contact@heyitsrksmith.com",
         "developer": "Kalyn Smith",
         "Your Discord user ID (optional)": "RKSmith",
         "name": "Delivery Quest",
-        "Brief description of your game": "A retro point & click adventure in the style of mid 80s Sierra games, where you play as a pizza delivery person who's been double crossed by an action movie villain.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "A flat wooden painted standee of a full scale vintage computer with a 4:3 screen built in and an old ball mouse for controls in front of it, the keyboard and speakers will be hidden behind it. Also I might need to borrow the speakers.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "It should just be an executable on the desktop, and it mainly uses mouse controls, so no real special setup is required.\n\nIn case of emergency, press ESC to pause and click on \"restart demo\". If it crashes, return to desktop through either the task manager or a power button hard reboot, and there should be an icon to re-start the game.",
-        "from": "Louisville, KY",
-        "Controller": ""
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/18/2024 18:00:28",
         "Email Address": "chaos.viii@gmail.com",
         "developer": "Robbie Cooper",
         "Your Discord user ID (optional)": "robocoop",
         "name": "Punkin Chunkin",
-        "Brief description of your game": "Launch pumpkins with catapults. (Who is this description for?)",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Unknown. Needs at least 4 directional inputs (either analog or digital) and another button to fire. Already supports keyboard/gamepad/mouse/touch. I don't have a computer I can count on using at the event. Just needs to be able to run Godot.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1vbn8gi3xzaFM0aBo7Wg89uBSd72Arw_gR1rV37X574Q/edit?usp=sharing",
-        "from": "Louisville, KY",
-        "Controller": ""
+        "from": "Louisville, KY"
       },
       {
+        "Email Address": "hello@fufroom.art",
         "Your Discord user ID (optional)": "fufroom (Alex Bezuska)",
         "name": "Hardcore Cottagecore",
-        "Brief description of your game": "mushrooms",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "mushcab",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "mushcab",
-        "from": "New Albany, IN",
-        "Controller": "y"
+        "from": "New Albany, IN"
       },
       {
-        "Timestamp": "10/3/2024 14:24:01",
         "Email Address": "hello@fufroom.art",
         "developer": "fufroom (Alex Bezuska), Eric lathrop, Jake Mercer",
         "Your Discord user ID (optional)": "fufroom (Alex Bezuska)",
         "name": "Kick Bot",
-        "Brief description of your game": "wall jumpin",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "projector, computer under table, controller on table",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "",
-        "from": "New Albany, IN",
-        "Controller": "y"
+        "from": "New Albany, IN"
       },
       {
-        "Timestamp": "10/1/2024 9:46:35",
         "Email Address": "briannagaskins1@gmail.com",
         "developer": "Zae Gaskins",
         "Your Discord user ID (optional)": "Zexiona",
         "name": "MycoMatch",
-        "Brief description of your game": "A simple match two card game meant to see how fast you can match mushrooms together!",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "I should be able to bring a TV but I will need a laptop with access to internet most likely",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/1uRzg2CVO1qAgf17nP0kVWJE-iUy2blJYVe_9s-kHha4/edit?usp=drivesdk",
-        "from": "Owingsville, KY",
-        "Controller": "n"
+        "from": "Owingsville, KY"
       },
       {
-        "Timestamp": "9/28/2024 13:04:09",
         "Email Address": "sum.magnus.vir@gmail.com",
         "developer": "Aaron Jacob Goodwine",
         "Your Discord user ID (optional)": "",
         "name": "The Feather of Ma'at",
-        "Brief description of your game": "An precision platformer, in which the player's task is to retrieve the stolen The Feather of Ma'at by scaling a tower Built to house it. The Feather is what is weighed against the heart and soul of humans on the \"Scale\" of justice.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Browser based with a USB controller. I can set up on my laptop. Also a secondary gba with flash-cart.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "At most refreshing the browser may be all thats required.",
-        "from": "Shelbyville ky",
-        "Controller": "y"
+        "from": "Shelbyville, KY"
       },
       {
-        "Timestamp": "9/19/2024 17:43:15",
         "Email Address": "trevkonty@gmail.com",
         "developer": "M.E.A.T.S",
         "Your Discord user ID (optional)": "_bronana",
         "name": "Psycho Coded✨",
-        "Brief description of your game": "Working with people is hard... but luckily, you're working with game devs! Psycho Coded✨is an indie management simulator about making your dream indie title with the dismembered parts of other game developers.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Understood. I will try to bring two computers and I would appreciate space for that. I can handle any hardware needs.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "",
-        "from": "Georgetown, IN",
-        "Controller": "n"
+        "from": "Georgetown, IN"
       },
       {
-        "Timestamp": "9/24/2024 18:47:06",
         "Email Address": "gessex@protonmail.com",
         "developer": "Glenn Essex",
         "Your Discord user ID (optional)": "Glenn Essex",
         "name": "A Day at the Snail Races",
-        "Brief description of your game": "Bet on a snail race and win big!",
-        "from": "Louisville, KY",
-        "Controller": "n"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "9/20/2024 18:55:55",
         "Email Address": "benjames.im@gmail.com",
         "developer": "Ben James",
         "Your Discord user ID (optional)": "Ben James Games",
         "name": "Finding your Way",
-        "Brief description of your game": "Abstract puzzle platformer",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "Yes, TV controller",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "",
-        "from": "Louisville, KY",
-        "Controller": "y"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "9/20/2024 22:37:44",
         "Email Address": "nathan@mommysbestgames.com",
         "developer": "Mommy's Best Games",
         "Your Discord user ID (optional)": "mommysbestgames",
         "name": "ChainStaff",
-        "Brief description of your game": "Run n gun with a transforming grappling hook.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "It is a laptop with a controller connected to it. Possibly also a TV with an HDMI cord.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "",
-        "from": "",
-        "Controller": "y"
+        "from": "Charlestown, IN"
       },
       {
+        "Email Address": "justinmoore034@gmail.com",
         "developer": "Bad Taste Games",
         "name": "Baddle Arena",
-        "Brief description of your game": "A hate letter to jrpgs: Baddle Arena is a turn based boss rush rogue-like made to run on original GameBoy hardware.",
         "from": "Louisville, KY"
       },
       {
         "developer": "R25th",
         "name": "The Two Skelefriends",
-        "Brief description of your game": "",
         "from": "Lexington, KY"
       },
       {
         "developer": "R25th",
         "name": "The Altar of Progress",
-        "Brief description of your game": "",
         "from": "Lexington, KY"
       },
       {
+        "Email Address": "justinmoore034@gmail.com",
         "developer": "Bad Taste Games",
         "name": "don't be alone",
-        "Brief description of your game": "",
         "from": "Louisville, KY"
       },
       {
-        "Timestamp": "9/25/2024 21:06:06",
         "Email Address": "xanthus1@gmail.com",
         "developer": "Digital Hollow Interactive, LLC (Scott Nalley)",
         "Your Discord user ID (optional)": ".xanthus",
         "name": "Hover Tank Arcade",
-        "Brief description of your game": "Pilot a tank with advanced mobility in this action arcade game! Aim for the high score as you navigate various obstacles and shoot down the enemy tanks and choppers.",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "My Arcade Cabinet! Set up on a standard table for accessibility, with chairs for players.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to an external document would be best so that we can easily print the document.  Thanks!": "https://docs.google.com/document/d/18sF_Bz-wvOcqdeWyTaJdoiGja0tx1FhO3I9Gyie2kMM/pub",
-        "from": "Louisville, KY",
-        "Controller": "y"
+        "from": "Louisville, KY"
       },
       {
-        "Timestamp": "10/18/2024 23:12:22",
         "Email Address": "w.scott.nalley@gmail.com",
         "developer": "Digital Hollow Interactive, LLC (Scott Nalley)scott",
         "Your Discord user ID (optional)": ".xanthus",
         "name": "Alchemy",
-        "Brief description of your game": "(WIP / I'll update) Brew potions with a wave of your hand!",
-        "Describe your game hardware setup here.  Also specify if you need to borrow any equipment or supplies.\n\nWe will try to display every game on at least a 30\" monitor with external speakers or a TV, so if you have one, bring it!  If not, don't worry, we will work to get your setup to look the best it can!": "An LED light stand on the ground, and LED cauldrons sitting on a small table, connected to a controller /sensor box unit. I'll need to use one of the small tables I brought to the Warp Zone.",
-        "Even if you plan to be there, please link to a document that describes setup instructions for your game as well as instructions for handling any resets, crashes, hardware quirks, or presentation criteria.  It doesn't have to be exact and set in stone.  We will work with you on setting up, testing, and troubleshooting as needed.\n\nA link to aSuper Bug Bash and it is by Aaron Jacob Goodwine and fufroom (Alex Bezuska)n external document would be best so that we can easily print the document.  Thanks!": "(TBD). Any issues should be resolved by power cycling using the power strip.",
-        "from": "Louisville Kentucky",
-        "Controller": ""
+        "from": "Louisville, KY"
       },
       {
+        "Email Address": "sum.magnus.vir@gmail.com",
         "name": "Super Bug Bash",
-        "developer": "Aaron Jacob Goodwine, fufroom (Alex Bezuska), and Colton Ramos"
+        "developer": "Aaron Jacob Goodwine, fufroom (Alex Bezuska), and Colton Ramos",
+        "from": "Louisville, KY"
       }
     ]
   },
@@ -2828,5 +2686,7 @@
         "link": "https://love2d.org/"
       }
     ]
-  }
+  },
+  "fund": [],
+  "history": {}
 }

@@ -1,4 +1,9 @@
-<main class="container my-5 position-relative">
+{{>header}}
+
+<main class="container my-5">
+
+
+ <main class="container my-5 position-relative">
   <header class="position-relative">
     <!-- The large banner image as a background -->
     <div class="banner-container position-relative">
@@ -91,6 +96,38 @@
     </section>
   </header>
 </main>
+
+
+
+
+
+  
+
+   <!-- Games Count -->
+  <section id="games-count">
+    <h2>We have {{local-game-harvest-2024.lgh.length}} games, all by local creators!</h2>
+  </section>
+
+  <!-- Games Showcase -->
+  <section id="games-showcase">
+    <h2>Featured Games</h2>
+    <div class="games-list">
+      {{#each local-game-harvest-2024.lgh}}
+      <div class="game-item">
+
+        <img src="img/games/lgh-2024/{{name}}.gif" alt="{{name}}" class="game-image animated">
+      <strong>{{name}}</strong>
+      <p>{{developer}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</main>
+
+{{>footer}}
+
+
+
 
 <!-- Countdown Timer Script -->
 <script>

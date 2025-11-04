@@ -9,10 +9,15 @@
       "file": "index.html",
       "showInNav": true
     },
-    {
-      "name": "Local Game Harvest",
-      "file": "local-game-harvest.html",
+      {
+      "name": "Local Game Harvest-2025",
+      "file": "local-game-harvest-2025.html",
       "showInNav": true
+    },
+    {
+      "name": "Local Game Harvest-2024",
+      "file": "local-game-harvest-2024.html",
+      "showInNav": false
     },
     {
       "name": "Blog",
@@ -25,7 +30,7 @@
       "showInNav": true
     },
     {
-      "name": "Warpzone",
+      "name": "Warp Zone",
       "file": "warpzone.html",
       "showInNav": true
     },
