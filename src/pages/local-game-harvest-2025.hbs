@@ -77,10 +77,9 @@
 
 
 
-<h1> Full list of games and exibits coming soon!</h1>
+<h1>THE GAMES</h1>
 
   
-{{!-- 
 
   <section id="games-count">
     <h2>We have {{local-game-harvest-2025.lgh.length}} games, all by local creators!</h2>
@@ -91,15 +90,16 @@
     <h2>Featured Games</h2>
     <div class="games-list">
       {{#each local-game-harvest-2025.lgh}}
-      <div class="game-item">
+      <div class="game-item" style="border: 1px solid purple;">
 
-        <img src="img/games/lgh-2025/{{name}}.gif" alt="{{name}}" class="game-image animated">
-      <strong>{{name}}</strong>
-      <p>{{developer}}</p>
+        <img src="{{image}}" alt="{{game}}" class="" style="max-width: 300px; max-height: 168px; margin: 0 auto; display: block; margin-bottom: 5px;">
+      <strong>{{game}}</strong>
+      <p>{{studio}}</p>
+      <a href="{{link}}" target="_blank">More Info</a>
       </div>
       {{/each}}
     </div>
-  </section> --}}
+  </section>
 
 
 

@@ -91,7 +91,405 @@
   },
   "index": {},
   "local-game-harvest-2025": {
-    "lgh": []
+    "lgh": [
+      {
+        "location": "Fort Wayne, IN",
+        "studio": "Sunset Arctic Games",
+        "game": "EchoBlade",
+        "link": "",
+        "image": "/img/lgh2025/EchoBlade - Sunset Arctic Games.gif",
+        "gif": true
+      },
+      {
+        "location": "Indianapolis, IN",
+        "studio": "Natalie Hill",
+        "game": "cloud uprising",
+        "link": "https://loungegames.itch.io/cloud-uprising",
+        "image": "/img/lgh2025/Cloud Uprising - Natalie Hill.gif",
+        "gif": true
+      },
+      {
+        "location": "Indianapolis, IN",
+        "studio": "Travis (Faas)",
+        "game": "WindFLWR",
+        "link": "https://bsky.app/profile/meanderingleaf.bsky.social",
+        "image": "/img/lgh2025/windFLWR - Spiritsong Games.gif",
+        "gif": true
+      },
+      {
+        "location": "Lexington KY",
+        "studio": "oldflowerGames",
+        "game": "Emblems: Sunless Vow",
+        "link": "https://store.steampowered.com/app/2993190/Emblems_Sunless_Vow_Demo/",
+        "image": "/img/lgh2025/Emblems Sunless Vow - oldflowerGames.gif",
+        "gif": true
+      },
+      {
+        "location": "Charlestown, IN",
+        "studio": "Mommy's Best Games",
+        "game": "ChainStaff",
+        "link": "https://chainstaffgame.com/",
+        "image": "/img/lgh2025/ChainStaff - Nathan Fouts.gif",
+        "gif": true
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Kristen Salas",
+        "game": "Vaporwave Battler",
+        "link": "http://www.neon98.com/vaporwave_battler.html",
+        "image": "/img/lgh2025/Vaporwave Battler - Kristen Salas.gif",
+        "gif": true
+      },
+      {
+        "location": "Crestwood, KY",
+        "studio": "Imakeda Games",
+        "game": "Spellcard Academy",
+        "link": "",
+        "image": "/img/lgh2025/Spell Card Academy - Colton Ramos.gif",
+        "gif": true
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Dream Distillery Games",
+        "game": "The Magic Bookstore",
+        "link": "https://damieba.itch.io/the-magic-bookstore",
+        "image": "/img/lgh2025/The Magic Bookstore - Dream Distillery Games.gif",
+        "gif": true
+      },
+      {
+        "location": "Chicago, IL",
+        "studio": "Dread Night",
+        "game": "SLAUGHTER VOID",
+        "link": "https://store.steampowered.com/app/3333980/Slaughter_Void/",
+        "image": "/img/lgh2025/SLAUGHTER VOID - Dread Night.gif",
+        "gif": true
+      },
+      {
+        "location": "Muncie, IN",
+        "studio": "Ball State University",
+        "game": "Duck Duck Hotel",
+        "link": "https://www.bsu.edu/academics/collegesanddepartments/computer-science/academic-programs/majors/game-design",
+        "image": "/img/lgh2025/Duck Duck Hotel - Ball State University.gif",
+        "gif": true
+      },
+      {
+        "location": "Muncie, IN",
+        "studio": "Ball State University",
+        "game": "Cryptid Zoo",
+        "link": "https://www.bsu.edu/academics/collegesanddepartments/computer-science/academic-programs/majors/game-design",
+        "image": "/img/lgh2025/Cryptid Zoo - Ball State University Class.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Bad Taste Games",
+        "game": "GET ROTATED!",
+        "link": "badtastegames.com",
+        "image": "/img/lgh2025/GET ROTATED - Bad Taste Games.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus, Candle the Cat, & HAPPYmoon",
+        "game": "Flag Forest",
+        "lnk": "",
+        "image": "/img/lgh2025/Flag Forest - Alex Garbus, Candle the Cat, & HAPPYmoon.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus, Austin Dungan, Christian Smith, Noah Bush, & Quinten Rader",
+        "game": "Package Handler VR",
+        "link": "",
+        "image": "/img/lgh2025/Package Handler - Alex Garbus et al.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus & Candle the Cat",
+        "game": "Flewberry",
+        "link": "",
+        "image": "/img/lgh2025/Flewberry - Alex Garbus and CandleTheCat.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus & Candle the Cat",
+        "game": "The Explors: Pyramid Explorers",
+        "link": "",
+        "image": "/img/lgh2025/The Explors - Alex Garbus and CandleTheCat.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus",
+        "game": "The Bunnies of Vegetaria",
+        "image": "/img/lgh2025/Bunnies of Vegetaria - Alex Garbus.gif",
+        "link": "",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus",
+        "game": "Pregnant",
+        "link": "",
+        "image": "/img/lgh2025/PREGNANT - Alex Garbus.gif",
+        "gif": true
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus",
+        "game": "Trains in a Cup!",
+        "link": "",
+        "image": "/img/lgh2025/Trains in a Cup! - Alex Garbus.gif",
+        "gif": true
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Super Soul",
+        "game": "Kentucky Dash",
+        "link": "https://supersoul.games",
+        "image": "/img/games/lgh-2024/Kentucky%20Dash.gif"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Ripley Smith",
+        "game": "Delivery Quest",
+        "link": "https://heyitsrksmith.com/",
+        "image": "img/games/lgh-2024/Delivery%20Quest.gif"
+      },
+      {
+        "location": "Lexington, Ky",
+        "studio": "Nick Modarelli",
+        "game": "Fruit Swarm",
+        "link": "https://tanukisuitup.itch.io/fruit-swarm",
+        "image": "/img/games/lgh-2024/Fruit%20Swarm.gif"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Glenn Essex",
+        "game": "A Day at the Snail Races",
+        "link": "https://glennessex.itch.io/a-day-at-the-snail-races",
+        "image": "/img/games/lgh-2024/A%20Day%20at%20the%20Snail%20Races.gif"
+      },
+      {
+        "location": "New Albany, IN",
+        "studio": "fufroom | Alex Bezuska, Eric lathrop",
+        "game": "Kick Bot",
+        "link": "https://store.steampowered.com/app/1136290/Kick_Bot/",
+        "image": "/img/games/lgh-2024/Kick%20Bot.gif"
+      },
+      {
+        "location": "Cincinnati, OH",
+        "studio": "Jake Jackman",
+        "game": "Alablaster",
+        "link": "https://metaj92.itch.io/alablaster",
+        "image": "/img/games/lgh-2024/Alablaster.gif"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Digital Hollow Interactive, LLC",
+        "game": "Hover Tank Arcade",
+        "link": "",
+        "image": "/img/games/lgh-2024/Hover%20Tank%20Arcade.gif"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Monstertree Games",
+        "game": "Privateers",
+        "link": "https://store.steampowered.com/app/903180/Privateers/",
+        "image": "/img/games/lgh-2024/Privateers.gif"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Alex Garbus",
+        "game": "Velocity Uncapped",
+        "link": "",
+        "image": "/img/lgh2025/Velocity Uncapped - Alex Garbus.png"
+      },
+      {
+        "location": "Lexington KY",
+        "studio": "Kristen Salas",
+        "game": "Makealotl Music",
+        "link": "https://www.makealotlmusic.com/",
+        "image": "/img/lgh2025/Makealotl Music - Kristen Salas.png"
+      },
+      {
+        "location": "Shelbyville, KY",
+        "studio": "Aaron Jacob Goodwine",
+        "game": "Alien Blast",
+        "link": "",
+        "image": "/img/lgh2025/Alien Blast.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Bad Taste Games",
+        "game": "Showdown Throwdown",
+        "link": "badtastegames.com",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "West Lafayette, IN",
+        "studio": "Torn Ace Studios",
+        "game": "Cyber Rail",
+        "link": "https://store.steampowered.com/app/2468230/Cyber_Rail/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Super Soul",
+        "game": "Untitled Kids Game",
+        "link": "",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Shylo Silvenar Artist",
+        "game": "Light Painting Demo",
+        "link": "https://silvenar.com/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Shylo Silvenar Artist",
+        "game": "Purrsonalities: an Augmented Reality Cat Art Exhibit Created in Unity",
+        "link": "Cats.silvenar.com",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "R25th",
+        "game": "Profound Longing",
+        "link": "www.r25th.com",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Nerdvana",
+        "game": "Pixelcrash",
+        "link": "",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington, KY",
+        "studio": "Matthew Altieri",
+        "game": "Drifting Orbit's Justice",
+        "link": "https://www.linkedin.com/in/matthew-altieri-b8396983/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Mao Diao Games",
+        "game": "Aster-Zoids",
+        "link": "https://github.com/ypt19778/ASTEROID_DESTORYERypt19778",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Mao Diao Games",
+        "game": "A Fun Hike",
+        "link": "https://github.com/ypt19778/DRINK-WATER-ypt19778/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Versailles, KY",
+        "studio": "Lance Pauley",
+        "game": "The Solemn Slaloms",
+        "link": "",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Kurt Taylor",
+        "game": "Nib",
+        "link": "https://kurtataylor.itch.io/nib",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Jonah Segree (galactical)",
+        "game": "Aglets",
+        "link": "https://galactical.itch.io/aglet",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington, Kentucky",
+        "studio": "Gavin Grupe (Toxagen)",
+        "game": "Cosmic Rays",
+        "link": "https://toxagen.itch.io/cosmic-rays",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "New Albany, IN",
+        "studio": "fufroom",
+        "game": "Paint by Fractures II",
+        "link": "https://fufroom.art/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "New Albany, IN",
+        "studio": "fufroom",
+        "game": "The Mimic's Code",
+        "link": "https://fufroom.art/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "New Albany, IN",
+        "studio": "fufroom | Alex Bezuska, Jonah Segree (galactical)",
+        "game": "PullPals",
+        "link": "https://fufroom.art/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Edward",
+        "game": "Hoop Flyer",
+        "link": "https://edc200.itch.io/hoopflyer3k",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Digital Hollow Interactive, LLC",
+        "game": "Pumpkin Rogue",
+        "link": "https://xanthus.itch.io/pumpkin-rogue",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Digital Hollow Interactive, LLC",
+        "game": "The Triangle",
+        "link": "",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "CowHammer Studios",
+        "game": "The Forbidden Flask",
+        "link": "https://store.steampowered.com/app/3243410/The_Forbidden_Flask/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "bad taste games",
+        "game": "🛞🍑🛞",
+        "link": "badtastegames.com",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Lexington KY",
+        "studio": "Atomic Core Studios",
+        "game": "Brickhaven",
+        "link": "https://store.steampowered.com/app/2594980/Brickhaven/",
+        "image": "/img/game-cart.png"
+      },
+      {
+        "location": "Louisville, KY",
+        "studio": "Aaron C Cloutier (TouchMint)",
+        "game": "Adventure To Fate - Core Quest Soundtrack",
+        "link": "https://aaronccloutier.bandcamp.com",
+        "image": "/img/game-cart.png"
+      }
+    ]
   },
   "local-game-harvest-2024": {
     "lgh": [
