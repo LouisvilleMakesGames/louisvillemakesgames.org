@@ -84,6 +84,11 @@
       "url": "https://louisvillemakesgames.printify.me",
       "showInNav": true,
       "param": "target=\"_blank\""
+    },
+    {
+      "name": "getjammin",
+      "file": "getjammin.html",
+      "showInNav": false
     }
   ]
 }

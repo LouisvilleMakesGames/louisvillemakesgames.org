@@ -86,6 +86,11 @@
         "showInNav": true,
         "param": "target=\"_blank\"",
         "file": "https://louisvillemakesgames.printify.me"
+      },
+      {
+        "name": "getjammin",
+        "file": "getjammin.html",
+        "showInNav": false
       }
     ]
   },
@@ -750,11 +755,58 @@
   },
   "blog": [
     {
+      "title": "A New Chapter for Louisville Makes Games & Warp Zone",
+      "blogID": "warp-zone-new-chapter",
+      "author": "Glenn Essex",
+      "date": "2025-11-19",
+      "featured": true,
+      "youtube-url": "",
+      "youtube-after-paragraph-number": 6,
+      "blurb": "Let me set the stage: Earlier this year, Louisville Makes Games and Warp Zone faced an existential crisis.  The building in which Warp Zone resided was sold out from under us and then the new owner kicked us out with very little notice.",
+      "contentParagraphs": [
+        "Suddenly, our little nexus of creativity, which had existed for over a decade, now faced its imminent demise.  The pressure was on to find a new home and find funding for it, or else operate without a home and risk unraveling from the fabric of our city, and leaving the people in our community in isolation.",
+        "The struggle raised some serious, foundational questions for LMG and Warp Zone.  If we were going to be forced to pay much higher rent, does that mean we will have to begin charging for events?  Does that mean we start hawking merch and pushing Warp Zone memberships?  Do we raise membership prices?  What is our ultimate value proposition?  What is the value of a physical space?  What kind of organization do we need to become in order to survive?",
+        "Based on input from people in our community, we rolled out a sponsorship model akin to the Blender Foundation or Godot Foundation.  Under those models, businesses and corporations can contribute money on a monthly basis, which goes to the development (based on a roadmap) of the software.",
+        "We turned many of our serious ideas for the future—which we were working toward very slowly–into our road map.  Some of those ideas include: running a summer camp for kids, hosting a workshop/bootcamp to get local games onto Steam, and funding community workshops.",
+        "Okay.  The stage is set, so what happened next?  Well…something profoundly transformational:",
+        "Re-Logic makes Terraria in our backyard, in Floyds Knobs, Indiana!  They are part of our community and have become a Patron-level sponsor of Louisville Makes Games!  With their help, our mission gets a giant boost.",
+        "We have since found a new home within an awesome non-profit incubator called Resolve KY, and thanks to Re-Logic’s sponsorship and our Warp Zone members, we will have enough money to upgrade our equipment, fund more workshops, pay for useful services for the community, provide more financial aid to those in need, sponsor developer trips, and generally expand our community outreach.",
+        "Thank you Andrew \"Redigit\" Spinks for finding us, and for recognizing our value.  Thanks also to all of the Re-Logic team for supporting our mission with your generous sponsorship.  2026 will be an incredible year for local games!",
+        "See you at Warp Zone!"
+      ],
+      "cta": "See our next upcoming events!",
+      "ctaLink": "https://www.meetup.com/louisvillemakesgames/events/",
+      "image": "/img/A whole new zone.png",
+      "imageCaptionStrong": "A new beginning for Louisville’s game development community",
+      "imageCaptionSub": "Resolve KY – Our new home"
+    },
+    {
       "title": "Save Warp Zone: Help Us Find a New Home!",
       "blogID": "save-warp-zone",
       "author": "Alex Bezuska",
       "date": "2025-08-07",
-      "featured": true,
+      "featured": false,
+      "blurb": "After years of serving Louisville’s creative community, Warp Zone is being forced to leave its longtime home by October 31st. We need your help to keep our mission alive and find a new space.",
+      "contentParagraphs": [
+        "Since 2016, Warp Zone has been a home base for game developers, artists, musicians, writers, and other creatives in Louisville. Run by the nonprofit Louisville Makes Games, we've hosted everything from game jams and art shows to coding workshops for kids - always free and open to the public.",
+        "Our current building was recently sold to a private entity, and the new landlord has plans to renovate. As a result, all tenants - including us - must vacate by October 31st, 2025. While we understand and respect their plans, this move puts our future at risk.",
+        "For the past six years, our community has grown stronger thanks to the incredible support of Fund For the Arts, who offered discounted rent and championed the value of nonprofits and arts organizations like ours.",
+        "Now, we’re asking for your help. Warp Zone isn’t just a space—it’s a community. If you’ve ever attended an event, taught a class, co-worked here, or believe in what we do, please consider supporting our next chapter.",
+        "Our rent will likely increase significantly in any new space we find, and we are also exploring the possibility of purchasing a permanent location someday. No options are off the table - we’re dreaming big and working to turn this disruption into an opportunity for growth.",
+        "We’re determined to keep this community alive. Let’s make sure Warp Zone has a future - one powered by the people who made it special in the first place!"
+      ],
+      "cta": "Donate now to help us secure Warp Zone's next home",
+      "ctaLink": "https://louisvillemakesgames.org/donate.html",
+      "image": "/img/warp-zone-world2-farewell.jpg",
+      "imageCaptionStrong": "The Warp Zone community creating together",
+      "imageCaptionSub": "Downtown Louisville, KY"
+    },
+    {
+      "title": "Save Warp Zone: Help Us Find a New Home!",
+      "blogID": "save-warp-zone",
+      "author": "Alex Bezuska",
+      "date": "2025-08-07",
+      "featured": false,
       "blurb": "After years of serving Louisville’s creative community, Warp Zone is being forced to leave its longtime home by October 31st. We need your help to keep our mission alive and find a new space.",
       "contentParagraphs": [
         "Since 2016, Warp Zone has been a home base for game developers, artists, musicians, writers, and other creatives in Louisville. Run by the nonprofit Louisville Makes Games, we've hosted everything from game jams and art shows to coding workshops for kids - always free and open to the public.",
