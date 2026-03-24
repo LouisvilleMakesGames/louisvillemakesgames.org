@@ -1,4 +1,5 @@
 .DS_store
+._*
 node_modules
 .env
 serve/*

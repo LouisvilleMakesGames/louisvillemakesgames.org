@@ -24,11 +24,17 @@ fi
 
 # Perform the upload using rsync
 echo "📤 Uploading serve/ to $USERNAME@$SERVER:$SITE_DIRECTORY ..."
-rsync -avz --delete serve/ "$USERNAME@$SERVER:$SITE_DIRECTORY"
 
-# Check if rsync was successful
-if [ $? -eq 0 ]; then
-  echo "✅ Upload complete!"
+if rsync -avz --delete serve/ "$USERNAME@$SERVER:$SITE_DIRECTORY"; then
+  echo "🔧 Applying web-safe permissions (dirs 755, files 644) ..."
+
+  if ssh "$USERNAME@$SERVER" "find '$SITE_DIRECTORY' -type d -exec chmod 755 {} + && find '$SITE_DIRECTORY' -type f -exec chmod 644 {} +"; then
+    echo "✅ Upload + permission fix complete!"
+  else
+    echo "❌ Upload succeeded, but permission fix failed."
+    exit 1
+  fi
 else
   echo "❌ Upload failed. Check your connection and try again."
+  exit 1
 fi

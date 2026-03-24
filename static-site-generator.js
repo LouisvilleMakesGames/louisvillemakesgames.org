@@ -19,6 +19,18 @@ makeDirIfNotExist(path.join(dest, "icons"));
 copydir.sync(path.join(src, "icons"), path.join(dest, "icons"));
 makeDirIfNotExist(path.join(dest, "warpzone"));
 copydir.sync(path.join(src, "pages/warpzone"), path.join(dest, "warpzone"));
+if (fs.existsSync(path.join(src, "pages/musicjam"))) {
+  makeDirIfNotExist(path.join(dest, "musicjam"));
+  copydir.sync(path.join(src, "pages/musicjam"), path.join(dest, "musicjam"));
+}
+if (fs.existsSync(path.join(src, "musicjam"))) {
+  makeDirIfNotExist(path.join(dest, "musicjam"));
+  copydir.sync(path.join(src, "musicjam"), path.join(dest, "musicjam"));
+}
+if (fs.existsSync("./musicjam")) {
+  makeDirIfNotExist(path.join(dest, "musicjam"));
+  copydir.sync("./musicjam", path.join(dest, "musicjam"));
+}
 
 
 let data = {};
