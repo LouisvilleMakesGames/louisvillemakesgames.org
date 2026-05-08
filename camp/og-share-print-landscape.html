@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camp Flyer Letter Landscape Print</title>
+  <style>
+    :root {
+      --ink: #fffcfb;
+      --soft: #f0e9ff;
+      --purple: #5a42bf;
+      --purple-deep: #2f236f;
+      --yellow: #ffd45a;
+      --aqua: #59e3d9;
+      --pink: #ff86cc;
+      --lime: #b6f27c;
+      --bg-shift-x: 100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: 11in 8.5in;
+      margin: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+      background: #171236;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+    }
+
+    .sheet {
+      position: relative;
+      isolation: isolate;
+      width: 11in;
+      height: 8.5in;
+      overflow: hidden;
+      color: var(--ink);
+      background: #251b58;
+    }
+
+    .photo-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: url("images/photos/opt-gallery-6.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right center;
+      transform: translateX(var(--bg-shift-x)) scale(1.02);
+      transform-origin: center;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 2% 8%, rgb(64 38 150 / 97%) 0%, rgb(64 38 150 / 92%) 28%, rgb(64 38 150 / 57%) 48%, rgb(64 38 150 / 16%) 65%, rgb(64 38 150 / 0%) 100%),
+        linear-gradient(90deg, rgb(58 39 136 / 56%) 0%, rgb(58 39 136 / 32%) 26%, rgb(58 39 136 / 12%) 50%, rgb(58 39 136 / 0%) 74%),
+        linear-gradient(180deg, rgb(44 31 96 / 24%), rgb(22 16 52 / 14%));
+    }
+
+    .dot-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image: radial-gradient(rgb(255 255 255 / 17%) 1px, transparent 1px);
+      background-size: 0.35in 0.35in;
+      mask-image: linear-gradient(transparent, black 11%, black 90%, transparent);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 0.42in 0.42in 2.1in;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 0.12in;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 10.5ch;
+      font-size: 0.93in;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      text-shadow: 0 0.03in 0.09in rgb(8 5 22 / 36%);
+    }
+
+    .schedule {
+      margin: 0;
+      font-size: 0.49in;
+      line-height: 1.01;
+      font-weight: 900;
+      color: var(--yellow);
+      text-shadow: 0 0.03in 0.08in rgb(10 8 28 / 34%);
+    }
+
+    .schedule-time {
+      font-size: 0.72em;
+      font-weight: 700;
+    }
+
+    .badge-wall {
+      display: grid;
+      gap: 0.09in;
+      align-content: start;
+      max-width: 70%;
+      padding-top: 0.06in;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 0.09in;
+      flex-wrap: nowrap;
+    }
+
+    .badge,
+    .age {
+      display: inline-flex;
+      align-items: center;
+      height: 0.46in;
+      padding: 0 0.16in;
+      border-radius: 999px;
+      border: 0.01in solid rgb(255 255 255 / 44%);
+      font-size: 0.295in;
+      font-weight: 700;
+      line-height: 1;
+      width: fit-content;
+      box-shadow: 0.04in 0.04in 0 rgb(31 21 71 / 46%);
+      white-space: nowrap;
+      color: #1c163f;
+    }
+
+    .badge.a { background: linear-gradient(140deg, #ffe598, #ffd45a); }
+    .badge.b { background: linear-gradient(140deg, #9cf2e9, var(--aqua)); }
+    .badge.c { background: linear-gradient(140deg, #ffe598, #ffd45a); }
+    .badge.d { background: linear-gradient(140deg, #ffc4ea, var(--pink)); }
+    .badge.e { background: linear-gradient(140deg, #dbf9a8, var(--lime)); }
+
+    .age {
+      background: linear-gradient(140deg, #d7cbff, #b29dff);
+      color: #20194b;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 0.22in;
+      padding: 0.18in 0.42in 0.33in;
+      min-height: 1.95in;
+      background: linear-gradient(160deg, rgb(55 39 121 / 82%), rgb(31 23 74 / 80%));
+    }
+
+    .footer-left {
+      display: grid;
+      align-self: stretch;
+      grid-template-rows: auto 1fr;
+      gap: 0.15in;
+    }
+
+    .footer-left img {
+      display: block;
+      width: 3.2in;
+      height: auto;
+      margin-left: -0.05in;
+      object-fit: contain;
+      filter: drop-shadow(0 0.03in 0.08in rgb(15 10 35 / 38%));
+    }
+
+    .footer-address {
+      align-self: end;
+      color: #fff;
+      font-size: 0.3in;
+      font-weight: 700;
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: end;
+      gap: 0.16in;
+      margin-bottom: 0.01in;
+    }
+
+    .footer-right-text {
+      display: grid;
+      justify-items: end;
+      align-items: end;
+      gap: 0.08in;
+      text-align: right;
+    }
+
+    .cta .line-1 {
+      display: block;
+      font-size: 0.43in;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .cta .line-2 {
+      display: block;
+      margin-top: 0.02in;
+      font-size: 0.52in;
+      font-weight: 900;
+      line-height: 0.96;
+      color: #fff;
+      letter-spacing: -0.015em;
+    }
+
+    .scholarship-note {
+      margin: 0;
+      color: #f0e9ff;
+      font-size: 0.22in;
+      font-weight: 700;
+      line-height: 1;
+      text-shadow: 0 0.03in 0.08in rgb(10 8 28 / 34%);
+    }
+
+    .qr-wrap {
+      display: grid;
+      place-items: center;
+      width: 1.55in;
+      height: 1.55in;
+      padding: 0.07in;
+      border-radius: 0.07in;
+      background: rgb(255 255 255 / 95%);
+      box-shadow: 0 0.03in 0.08in rgb(12 9 28 / 35%);
+    }
+
+    .qr-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .trim-safe {
+      position: absolute;
+      inset: 0.2in;
+      border: 0.015in dashed rgb(255 255 255 / 35%);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    @media print {
+      html,
+      body {
+        background: #fff;
+      }
+
+      .trim-safe {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="Letter landscape print-ready camp flyer">
+    <div class="photo-bg" aria-hidden="true"></div>
+    <div class="hero-gradient" aria-hidden="true"></div>
+    <div class="dot-grid" aria-hidden="true"></div>
+    <div class="trim-safe" aria-hidden="true"></div>
+
+    <div class="content">
+      <h1>Game&nbsp;Design Camp for Teens</h1>
+      <p class="schedule">July 20-24 · <span class="schedule-time">9:00 AM-5:00 PM</span></p>
+
+      <section class="badge-wall" aria-label="Program highlights">
+        <div class="badge-row">
+          <span class="badge d">Build And Showcase a Finished Game</span>
+        </div>
+        <div class="badge-row">
+          <span class="badge b">Code + Art + Animation + Music</span>
+        </div>
+        <div class="badge-row">
+          <span class="badge e">Godot Engine</span>
+          <span class="badge c">$100</span>
+        </div>
+        <div class="badge-row">
+          <span class="age">Ages 14-18</span>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <img src="images/logos/lmg-horizontal-dark.svg" alt="Louisville Makes Games logo">
+        <div class="footer-address">702 Logan St, Louisville KY</div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-right-text">
+          <div class="cta">
+            <span class="line-1">Sign Up Now</span>
+            <span class="line-2">lmg.cool/camp</span>
+          </div>
+          <p class="scholarship-note">Scholarships Available</p>
+        </div>
+
+        <div class="qr-wrap" aria-label="QR code for lmg.cool/camp">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=440x440&data=https%3A%2F%2Flmg.cool%2Fcamp" alt="QR code linking to lmg.cool/camp">
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
