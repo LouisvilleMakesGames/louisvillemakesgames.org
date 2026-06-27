@@ -10,9 +10,10 @@
       "showInNav": true
     },
       {
-      "name": "Local Game Harvest-2025",
-      "file": "local-game-harvest-2025.html",
-      "showInNav": true
+      "name": "Godot Summer Camp 2026",
+      "file": "camp/index.html",
+      "showInNav": true,
+      "class": "nav-link-camp"
     },
     {
       "name": "Local Game Harvest-2024",

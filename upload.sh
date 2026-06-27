@@ -9,6 +9,7 @@ if [ ! -f .env ]; then
   echo "SERVER=123.4.876.123"
   echo "SITE_DIRECTORY=/var/www/trashbaby.cool/"
   echo "--------------------------------------------"
+  echo "NOTE: this requires rsync ssh keys setup for this username/server combination"
   exit 1
 fi
 

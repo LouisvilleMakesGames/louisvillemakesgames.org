@@ -79,8 +79,11 @@ data.site.pages.forEach((page) => {
   if (page.file && !page.file.includes('http')) {
     var pageName = page.file.replace(".html", "").toLowerCase();
     var fileName = page.file;
+    var templatePath = path.join(src, config.templatesDirectory, pageName + ".hbs");
     
-    createPage(pageName, data, path.join(dest, fileName));
+    if (fs.existsSync(templatePath)) {
+      createPage(pageName, data, path.join(dest, fileName));
+    }
   }
 });
 
