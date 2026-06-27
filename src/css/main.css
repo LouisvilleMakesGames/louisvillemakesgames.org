@@ -147,6 +147,10 @@ h2 i {
   border-radius: 0% !important;
 }
 
+.nav-link-camp {
+  color: #ffd700 !important;
+}
+
 .nav-link.active {
   color: #495057 !important;
   background-color: #6ACAD0 !important;

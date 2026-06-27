@@ -31,6 +31,10 @@ if (fs.existsSync("./musicjam")) {
   makeDirIfNotExist(path.join(dest, "musicjam"));
   copydir.sync("./musicjam", path.join(dest, "musicjam"));
 }
+if (fs.existsSync("./camp")) {
+  makeDirIfNotExist(path.join(dest, "camp"));
+  copydir.sync("./camp", path.join(dest, "camp"));
+}
 
 
 let data = {};
