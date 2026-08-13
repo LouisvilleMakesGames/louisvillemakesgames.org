@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warp Zone Volume 3 - Hear the full album here!</title>
+  <meta name="description" content="Listen to Warp Zone Volume 3, the full album from Warp Zone Music Jam 2026 in Louisville, KY." />
+  <link rel="canonical" href="https://lmg.cool/musicjam/2026/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Louisville Makes Games" />
+  <meta property="og:title" content="Warp Zone Volume 3 - Hear the full album here!" />
+  <meta property="og:description" content="Listen to Warp Zone Volume 3, the full album from Warp Zone Music Jam 2026 in Louisville, KY." />
+  <meta property="og:url" content="https://lmg.cool/musicjam/2026/index.html" />
+  <meta property="og:image" content="https://lmg.cool/musicjam/2026/assets/og-share.png" />
+  <meta property="og:image:alt" content="Warp Zone Volume 3 album share image" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Warp Zone Volume 3 - Hear the full album here!" />
+  <meta name="twitter:description" content="Listen to Warp Zone Volume 3, the full album from Warp Zone Music Jam 2026 in Louisville, KY." />
+  <meta name="twitter:image" content="https://lmg.cool/musicjam/2026/assets/og-share.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@cassette/player@2.0.0-beta.1/dist/css/cassette-player.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.12.0/dist/baguetteBox.min.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body class="music-page">
+  <canvas id="shader-bg" class="shader-bg" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="aurora aurora-1" aria-hidden="true"></div>
+  <div class="aurora aurora-2" aria-hidden="true"></div>
+
+  <main>
+    <section class="panel player-panel">
+      <div class="player-top-grid">
+        <aside class="player-intro">
+          <img src="assets/images/warp-zone-volume-3-logo.png" alt="Warp Zone Volume 3 logo" class="logo" />
+          <p class="event-blurb">A music making event that took place Friday, March 20th, 2026 at 7PM EST → Sunday, March 22nd, 2026 at 9PM in Louisville Kentucky at Warp Zone Louisville.</p>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="https://discord.gg/gZwbF94UJK" target="_blank" rel="noopener noreferrer"><span class="music-note-icon">♪</span> Join the Discord</a>
+            <a class="btn btn-secondary" href="https://itch.io/jam/warp-zone-music-jam-2026/entries" target="_blank" rel="noopener noreferrer"><span class="music-note-icon">♫</span> View Everyone’s Entries on Itch</a>
+            <a class="btn btn-secondary" href="https://lmg.cool" target="_blank" rel="noopener noreferrer"><span class="music-note-icon">♬</span> Louisville Makes Games</a>
+            <a class="btn btn-secondary" href="https://www.meetup.com/LouisvilleMakesGames" target="_blank" rel="noopener noreferrer"><span class="music-note-icon">♩</span> Our Meetup</a>
+          </div>
+          <div class="cd-model-panel">
+            <div id="cd-model" class="cd-model-view" aria-label="3D CD jewel case model"></div>
+          </div>
+        </aside>
+
+        <div class="player-main">
+          <div id="cassette-app"></div>
+          <p class="section-subtitle" style="margin-top: 0.9rem;">
+            Player powered by @cassette/player by Ben Wiley —
+            <a href="https://www.npmjs.com/package/@cassette/player" target="_blank" rel="noopener noreferrer">@cassette/player</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="gallery-grid" id="jam-gallery">
+        <a class="photo-card tilt-a gallery-item" href="assets/images/equipment/IMG_5609.JPG"><img src="assets/images/equipment/IMG_5609.JPG" alt="Music jam equipment setup photo 5609" /></a>
+        <a class="photo-card tilt-b gallery-item" href="assets/images/equipment/IMG_5610.JPG"><img src="assets/images/equipment/IMG_5610.JPG" alt="Music jam equipment setup photo 5610" /></a>
+        <a class="photo-card tilt-c gallery-item" href="assets/images/equipment/IMG_5611.JPG"><img src="assets/images/equipment/IMG_5611.JPG" alt="Music jam equipment setup photo 5611" /></a>
+        <a class="photo-card tilt-d gallery-item" href="assets/images/equipment/IMG_5612.JPG"><img src="assets/images/equipment/IMG_5612.JPG" alt="Music jam equipment setup photo 5612" /></a>
+        <a class="photo-card float-1 gallery-item" href="assets/images/gallery/IMG_5607.JPG"><img src="assets/images/gallery/IMG_5607.JPG" alt="Jam scene 5607" /></a>
+        <a class="photo-card float-2 gallery-item" href="assets/images/gallery/IMG_5676.jpg"><img src="assets/images/gallery/IMG_5676.jpg" alt="Jam scene 5676" /></a>
+        <a class="photo-card float-3 gallery-item" href="assets/images/gallery/IMG_5678.jpg"><img src="assets/images/gallery/IMG_5678.jpg" alt="Jam scene 5678" /></a>
+        <a class="photo-card float-3 gallery-item" href="assets/images/gallery/IMG_5680.jpg"><img src="assets/images/gallery/IMG_5680.jpg" alt="Jam scene 5680" /></a>
+        <a class="photo-card float-4 gallery-item" href="assets/images/gallery/IMG_5682.jpg"><img src="assets/images/gallery/IMG_5682.jpg" alt="Jam scene 5682" /></a>
+        <a class="photo-card float-5 gallery-item" href="assets/images/gallery/IMG_5684.jpg"><img src="assets/images/gallery/IMG_5684.jpg" alt="Jam scene 5684" /></a>
+        <a class="photo-card float-6 gallery-item" href="assets/images/gallery/IMG_5688.jpg"><img src="assets/images/gallery/IMG_5688.jpg" alt="Jam scene 5688" /></a>
+        <a class="photo-card float-7 gallery-item" href="assets/images/gallery/PXL_20260321_012921591.MP.JPG"><img src="assets/images/gallery/PXL_20260321_012921591.MP.JPG" alt="Jam scene PXL 012921591" /></a>
+        <a class="photo-card float-8 gallery-item" href="assets/images/gallery/PXL_20260321_185815852.JPG"><img src="assets/images/gallery/PXL_20260321_185815852.JPG" alt="Jam scene PXL 185815852" /></a>
+        <a class="photo-card float-9 gallery-item" href="assets/images/gallery/PXL_20260321_185822920.JPG"><img src="assets/images/gallery/PXL_20260321_185822920.JPG" alt="Jam scene PXL 185822920" /></a>
+        <a class="photo-card float-10 gallery-item" href="assets/images/gallery/PXL_20260321_185838100.JPG"><img src="assets/images/gallery/PXL_20260321_185838100.JPG" alt="Jam scene PXL 185838100" /></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Warp Zone Music Jam is a Louisville weekend jam (March 20, 2026, 7PM EST → March 22, 2026, 9PM) where musicians and aspiring musicians create tracks from random theme prompts. Hosted at Warp Zone Louisville (702 Logan St, Smoketown) by Louisville Makes Games (LMG), a nonprofit creative community for local game creators. See more events at <a href="https://lmg.cool" target="_blank" rel="noopener noreferrer">lmg.cool</a> and join Discord for remote participation: <a href="https://discord.gg/gZwbF94UJK" target="_blank" rel="noopener noreferrer">discord.gg/gZwbF94UJK</a>.
+      </p>
+      <p>
+        <a href="https://skfb.ly/6SAOI" target="_blank" rel="noopener noreferrer">CD + Jewel Case</a> by blue man group is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.min.js"></script>
+  <script src="https://unpkg.com/resize-observer-polyfill@1.5.1/dist/ResizeObserver.js"></script>
+  <script src="https://unpkg.com/@cassette/core@2.0.0-beta.1/dist/es5/cassette-core.js"></script>
+  <script src="https://unpkg.com/@cassette/components@2.0.0-beta.1/dist/es5/cassette-components.js"></script>
+  <script src="https://unpkg.com/@cassette/player@2.0.0-beta.1/dist/es5/cassette-player.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.12.0/dist/baguetteBox.min.js"></script>
+  <script src="shader-background.js"></script>
+  <script src="gallery.js"></script>
+  <script src="box-tilt.js"></script>
+  <script type="module" src="cd-model.js?v=20260323-1"></script>
+  <script src="player.js"></script>
+</body>
+</html>

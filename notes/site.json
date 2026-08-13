@@ -1,0 +1,41 @@
+
+{
+    "links" : [
+        {
+            "title":"Kentucky Game Developer Discord",
+            "hover":"Join the Kentucky Game Developer Discord",
+            "link":"https://discord.gg/gZwbF94UJK"
+        },
+        {
+            "title":"Upcoming Events",
+            "hover":"Louisville Makes Games virtual events on meetup.com",
+            "link":"https://www.meetup.com/LouisvilleMakesGames"
+        },
+        {
+            "title":"Our Videos on Youtube",
+            "hover":"Louisville Makes Games YouTube channel",
+            "link":"https://www.youtube.com/channel/UCgvY4gzKi9ilIspSn8Pe2EQ"
+        },
+        {
+            "title":"Make a Donation via Paypal",
+            "hover":"Donate to Louisville Makes Games via Paypal",
+            "link":"https://www.paypal.me/louisvillemakesgames"
+        },
+        {
+            "title":"Make a Recurring Donation via Patreon",
+            "hover":"Donate to Louisville Makes Games on Patreon",
+            "link":"https://www.patreon.com/LouisvilleMakesGames"
+        },
+        {
+            "title":"Support us for free via Amazon Smile",
+            "hover":"Make Louisville Makes Games your charity of choice on Amazon",
+            "link":"https://smile.amazon.com/ch/47-4777693"
+        },
+        {
+            "title":"Support us for free via Kroger Rewards",
+            "hover":"Set Louisville Makes Games as your charity for Kroger Community Rewards",
+            "link":"https://www.kroger.com/account/enrollCommunityRewardsNow"
+        }
+    ]
+}
+

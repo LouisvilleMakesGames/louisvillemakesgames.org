@@ -1,0 +1,78 @@
+{{>header}}
+
+<main class="container my-5">
+
+<h1>Games</h1>
+
+<h4>Proudly displaying <span id="gameCount"></span> local games!</h4>
+<h3>Local Games! – Gotta buy 'em all!</h3>
+  <div class="row">
+    {{#each games}}
+    {{#if show}}{{#if complete}}
+      <div class="col-md-4">
+        <div class="card game-card bg-dark text-white">
+          <div class="card-img-container">
+          <a href="{{link}}" target="_blank" >
+            <img class="card-img-top" src="{{image}}" alt="{{name}}">
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-price">{{price}}</h5>
+            <h5 class="card-title">{{name}}</h5>
+    
+            <p class="card-text">Released {{released}}</p>
+            
+            <p class="card-text">By {{creator}}</p>
+            <p class="card-text">{{pitch}}</p>
+            {{!-- <a href="{{link}}" target="_blank" class="btn btn-primary">Play Now</a> --}}
+          </div>
+        </div>
+      </div>
+       {{/if}}{{/if}}
+    {{/each}}
+  </div>
+
+  <h2>Games currently in development</h2>
+
+  <p>Check our <a href="https://www.meetup.com/LouisvilleMakesGames/" target="_blank">meet up events</a> for the next playtest night and try these local games before they are released!</p>
+
+  <div class="row">
+    {{#each games}}
+    {{#if wip}}
+      <div class="col-md-4">
+        <div class="card game-card bg-dark text-white">
+          <div class="card-img-container">
+          <a href="{{link}}" target="_blank" >
+            <img class="card-img-top" src="{{image}}" alt="{{name}}">
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-price">{{price}}</h5>
+            <h5 class="card-title">{{name}}</h5>
+            
+            <p class="card-text">In Development since {{started}}</p>
+           
+            <p class="card-text">By {{creator}}</p>
+            <p class="card-text">{{pitch}}</p>
+            {{!-- <a href="{{link}}" target="_blank" class="btn btn-primary">Play Now</a> --}}
+          </div>
+        </div>
+      </div>
+       {{/if}}
+    {{/each}}
+  </div>
+
+</div>
+
+
+
+<!-- JavaScript code for counting game cards and displaying the count in the above div -->
+<script>
+  const gameCards = document.querySelectorAll('.game-card');
+  const gameCountDiv = document.getElementById('gameCount');
+  gameCountDiv.innerText = gameCards.length;
+</script>
+
+
+</main>
+{{>footer}}

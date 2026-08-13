@@ -1,0 +1,9 @@
+{
+  "src" : "src",
+  "dest" : "serve",
+  "templatesDirectory": "pages",
+
+  "templates": [],
+  "partialsDirectory": "partials"
+
+}

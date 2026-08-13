@@ -1,0 +1,196 @@
+ <div class="donation-card" role="region" aria-label="Donation options">
+
+      <!-- Toggle buttons -->
+      <div class="toggle-group" role="tablist" aria-label="Donation type toggle">
+        <button
+          type="button"
+          class="toggle-btn active"
+          role="tab"
+          aria-selected="true"
+          id="monthly-tab"
+          aria-controls="monthly-content"
+        >
+          Monthly
+        </button>
+        <button
+          type="button"
+          class="toggle-btn"
+          role="tab"
+          aria-selected="false"
+          id="one-time-tab"
+          aria-controls="one-time-content"
+        >
+          One-time
+        </button>
+      </div>
+
+      <!-- Monthly donation content -->
+      <div id="monthly-content" role="tabpanel" aria-labelledby="monthly-tab">
+        <div class="tiers-grid" role="list" aria-label="Monthly donation tiers">
+          <button type="button" class="tier-btn" data-amount="5"> $5 </button>
+          <button type="button" class="tier-btn" data-amount="10"> $10 </button>
+          <button type="button" class="tier-btn selected" data-amount="25"> $25 </button>
+          <button type="button" class="tier-btn" data-amount="50"> $50 </button>
+          <button type="button" class="tier-btn" data-amount="100"> $100 </button>
+          <button type="button" class="tier-btn" data-amount="250"> $250 </button>
+        </div>
+        <p>
+          Become a <strong>Sustainer!</strong>
+        </p>
+        <ul class="benefits list-unstyled">
+          <li class="benefit-item"><i class="bi bi-check-circle-fill"></i> Support the development of Louisville Makes Games</li>
+          <li class="benefit-item"><i class="bi bi-check-circle-fill"></i> Show your name or company</li>
+        </ul>
+
+        <button class="donate-btn" id="monthly-donate-btn" aria-label="Donate monthly">
+          Donate
+        </button>
+      </div>
+
+     <!-- One-time donation content -->
+<div id="one-time-content" role="tabpanel" aria-labelledby="one-time-tab" hidden>
+  <div class="mb-3">
+    <label for="one-time-amount" class="form-label text-white">Donation Amount (USD)</label>
+    <input
+      type="number"
+      id="one-time-amount"
+      class="form-control"
+      value="25"
+      min="1"
+      step="1"
+      aria-label="Enter one-time donation amount"
+    />
+  </div>
+
+  <button class="donate-btn" id="one-time-donate-btn" aria-label="Donate one-time">
+    Donate One-Time
+  </button>
+</div>
+
+    </div>
+
+    <style>
+        .donation-card {
+  flex: 1 1 320px;
+  background: #6b6666; /* brand dark gray */
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 0 15px rgb(0 0 0 / 0.6);
+  user-select: none;
+}
+
+/* Toggle buttons */
+.toggle-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 2px solid #6acad0; /* teal */
+  background: #a39f9f; /* mid gray */
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.6rem 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+}
+
+.toggle-btn.active {
+  background: #6acad0; /* teal highlight */
+  color: #000;
+  font-weight: 700;
+}
+
+/* Tier buttons grid */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.tier-btn {
+  padding: 0.6rem 0;
+  border: 2px solid #ea3657; /* red/pink */
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.tier-btn.selected {
+  background: #ea3657; /* red/pink active */
+  color: #fff;
+  border-color: #ea3657;
+  font-weight: 700;
+}
+
+/* Benefit list */
+.benefits {
+  margin-bottom: 1.3rem;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  opacity: 0.95;
+}
+
+.benefit-item .bi-check-circle-fill {
+  color: #edde44; /* yellow check */
+  font-size: 1.2rem;
+}
+
+.benefits strong {
+  color: #edde44; /* yellow emphasis */
+}
+
+/* Donate button */
+.donate-btn {
+  width: 100%;
+  background-color: #ea3657; /* bold red/pink */
+  border: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.6rem 0;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.donate-btn:hover {
+  background-color: #c42b48; /* deeper red on hover */
+}
+
+#one-time-amount {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #6acad0; /* teal */
+  background: #fff;
+  color: #000;
+  margin-bottom: 1rem;
+}
+#one-time-amount:focus {
+  outline: none;
+  border-color: #ea3657; /* red/pink focus */
+}
+
+
+    </style>

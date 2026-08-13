@@ -1,0 +1,54 @@
+<footer class="bg-dark text-light p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <p id="year-range"></p>
+        <p>501(c)3 non-profit organization<br>
+          Louisville, Kentucky</p>
+      </div>
+      <div class="col-12 col-md-6 text-md-end">
+        {{!-- <ul class="list-unstyled d-inline-flex">
+          <li class="ms-3">
+            <a href="index.html" class="text-light text-decoration-none">Home</a>
+          </li>
+  
+          <li class="ms-3">
+            <a href="press.html" class="text-light text-decoration-none">Press</a>
+          </li>
+        </ul> --}}
+        <div class="cc-zero mt-4">
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">
+            <img src="https://licensebuttons.net/p/zero/1.0/88x31.png" alt="Creative Commons Zero">
+          </a>
+        </div>
+        <p class="mt-2">This website is licensed under
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">Creative Commons
+            Zero</a>
+        </p>
+        <p>Feel free to view/use our source code on <a
+            href="https://github.com/LouisvilleMakesGames/LouisvilleMakesGames.org" target="_blank"
+            rel="noopener">GitHub</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  // Update the year range in the footer dynamically
+  const currentYear = new Date().getFullYear();
+  document.getElementById('year-range').textContent = `2014-${currentYear} Louisville Makes Games, Inc.`;
+
+  // Your existing code for the random color functionality
+  window.addEventListener("load", function() {
+    const elements = document.querySelectorAll(".image-container");
+    const colors = ["red", "blue", "yellow"];
+    
+    elements.forEach(function(element) {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      element.classList.add(randomColor);
+    });
+  });
+</script>
+</html>

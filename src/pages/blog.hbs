@@ -1,0 +1,37 @@
+{{>header}}
+<main class="container my-5">
+
+    <h1>Blog</h1>
+
+{{#each blog}}
+<div class="post" id="{{postID}}">
+<article>
+     <h2>{{title}}</h2>
+        <p class="author-date">By {{author}}, on {{date}}</p>
+<div class="row">
+   
+    <div class="col-md-6">
+       <p>{{blurb}}</p>
+        {{#each contentParagraphs}}<p>{{this}}</p>{{/each}}
+        {{#if ctaLink}}
+        <a href="{{ctaLink}}" target="_blank" class="btn btn-primary">{{cta}}</a>
+        {{/if}}
+    </div>
+     <div class="col-md-6">
+        <div class="image-container"><img class="img-fluid" src="{{image}}" alt="{{title}}"></div>
+        <p class="fw-bold image-caption-strong">{{imageCaptionStrong}}</p>
+        <p class="image-caption">{{imageCaptionSub}}</p>   
+    </div>
+</div>
+</article>
+<hr>
+
+</div>
+
+
+{{/each}}
+
+
+</main>
+
+{{>footer}}

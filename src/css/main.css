@@ -1,0 +1,426 @@
+body {
+  background-color: #252526;
+  color: white;
+}
+
+a {
+  color: #edde44;
+}
+
+a:hover {
+  color: #f5eb83;
+  cursor: pointer !important;
+}
+
+.navbar {
+  background: #1e1e1e !important;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+
+main.container {
+  margin-top: 150px !important;
+}
+
+.btn-primary {
+  background-color: #6ACAD0;
+  border-color: #6ACAD0;
+}
+
+
+.btn-primary:hover {
+  background-color: #5FA3AB;
+  border-color: #5FA3AB;
+}
+
+
+footer {
+  background-color: #EA3657;
+}
+
+
+h1 {
+  background-color: #EDDE44;
+  color: #1e1e1e;
+  padding: 20px 15px;
+  transform: rotate(-2deg);
+  
+  margin-bottom: 1.5rem !important;
+  width: fit-content;
+}
+
+
+h1 i {
+  margin-right: 10px;
+}
+
+table {
+  color: white;
+}
+
+
+.cc-zero {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.cc-zero img {
+  height: 31px;
+  width: 88px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+.btn {
+  font-size: 1.25rem;
+  text-align: left;
+  border-radius: 0;
+  border: 0;
+}
+
+
+.btn i,
+h2 i {
+  margin-right: 10px;
+}
+
+.d-flex .btn {
+  margin: 5px;
+}
+
+.image-container {
+  margin: 25px 10px 0 10px;
+  position: relative;
+  display: inline-block;
+  transition: transform 1s ease-in-out;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 1s ease-in-out;
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EA3657;
+  transform: rotate(-5deg);
+  z-index: -1;
+
+}
+
+
+.image-container.red::after {
+ 
+  background-color: #EA3657;
+
+
+}
+.image-container.blue::after {
+ 
+  background-color: #6ACAD0;
+
+
+}
+.image-container.yellow::after {
+  
+  background-color: #EDDE44;
+
+
+}
+
+.image-container:hover {
+  transform: rotate(3deg);
+}
+
+.nav-link {
+  border-radius: 0% !important;
+}
+
+.nav-link-camp {
+  color: #ffd700 !important;
+}
+
+.nav-link.active {
+  color: #495057 !important;
+  background-color: #6ACAD0 !important;
+  border-color: #6ACAD0 !important;
+}
+
+.callout-box {
+
+  border: 4px solid white;
+
+  padding: 0 15px 15px 15px;
+  margin-top: 26px;
+
+}
+
+.callout-box h1 {
+  position: relative;
+  top: -25px;
+  background: #6ACAD0;
+  margin-bottom: -0.5rem !important;
+
+}
+
+
+.callout-box a {
+  width: 100%;
+  min-height: 60px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.post hr{
+  margin: 150px 40px;
+}
+
+.image-caption-strong, .image-caption{
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+.author-date{
+  font-style: italic;
+  font-size: 14px;
+}
+
+.btn {
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: rotate3d(1, 1, 0, 10deg);
+}
+
+.game-card{
+  margin: 10px;
+
+}
+
+.card-img-container{
+  text-align: center;
+//background: black;
+max-height: 185px;
+}
+
+.card-img-top{
+  margin: 0 auto !important;
+  width: auto !important;
+  max-height: 185px;
+  max-width: 100%;
+}
+
+.game-card a img{
+  border: 2px solid transparent;
+
+}
+.game-card a img:hover{
+  border: 2px solid white;
+
+}
+
+
+.card-text{
+  margin: 0;
+}
+
+.card-price {
+  position: absolute;
+  right: 0px;
+}
+
+
+.logo-preview {
+  max-width: 250px;
+  margin: 10px;
+}
+.logo-container {
+margin-top: 25px;
+margin-bottom: 150px;
+}
+.logo-container h2{
+  margin-bottom: 50px;
+}
+.logo-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+}
+
+.logo-container .card{
+  border: 1px solid white;
+  border-radius: 10px !important;
+  padding: 15px !important;
+}
+
+.logo-container .card-body p{
+  margin-top: 10px !important; 
+  margin-bottom: 0 !important; 
+  margin-left: 0 !important; 
+  margin-right: 0 !important; 
+
+}
+.card .btn.btn-outline-light.btn-sm{
+  font-size: 15px !important;
+}
+
+.card .btn.btn-outline-light.btn-sm:hover{
+  color: white;
+  text-decoration: underline;
+ background: transparent !important; 
+}
+
+
+.swatch-container {
+  display: block !important;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 480px;
+}
+
+.swatch-box{
+  min-width: 145px;
+  display: inline-block;
+}
+
+.swatch {
+  display: inline-block !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  vertical-align: middle;
+  margin-right: 6px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  margin-bottom: 15px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+
+.logo-lt-bg{
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.timeline-container {
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 2px;
+  margin: 50px 0;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, transparent, transparent 10px, black 10px, black 11px);
+}
+
+.event {
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.event img {
+  width: 50px;
+  height: 50px;
+}
+
+.event .event-content {
+  padding: 10px;
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  border: 1px solid #222;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Arrow styling - LMG color palette */
+.event .arrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #ea3657; /* LMG Red */
+  position: absolute;
+}
+
+/* Top event arrows */
+.top .arrow {
+  border-top: none;
+  border-bottom: 20px solid #ea3657;
+  top: 100%;
+  left: calc(50% - 15px);
+}
+
+/* Bottom event arrows */
+.bottom .arrow {
+  top: -20px;
+  left: calc(50% - 15px);
+}
+
+/* Alternating event positions */
+.top {
+  bottom: 100px;
+}
+
+.bottom {
+  top: 100px;
+}
+
+
+
+#timeline-embed {
+  border-radius: 0 !important;
+    width: 100%;
+    height: 600px;
+    background-color: #201e1e; /* Dark background for the timeline container */
+  }
+
+  /* Customize the timeline slides */
+  .tl-slide {
+    background-color: #2c2a2a !important; /* Dark background for slide */
+
+  }
+.tl-slidenav-title{
+  color: white !important;
+}
+  

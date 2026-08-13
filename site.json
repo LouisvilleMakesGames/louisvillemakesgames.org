@@ -1,0 +1,95 @@
+{
+  "title": "Louisville Makes Games!",
+  "subtitle": "subtitle",
+  "description": "description",
+  "google-analytics-id": "",
+  "pages":[
+    {
+      "name": "Home",
+      "file": "index.html",
+      "showInNav": true
+    },
+      {
+      "name": "Godot Summer Camp 2026",
+      "file": "camp/index.html",
+      "showInNav": true,
+      "class": "nav-link-camp"
+    },
+    {
+      "name": "Local Game Harvest-2024",
+      "file": "local-game-harvest-2024.html",
+      "showInNav": false
+    },
+    {
+      "name": "Blog",
+      "file": "blog.html",
+      "showInNav": true
+    },
+    {
+      "name": "Games",
+      "file": "games.html",
+      "showInNav": true
+    },
+    {
+      "name": "Warp Zone",
+      "file": "warpzone.html",
+      "showInNav": true
+    },
+    {
+      "name": "Resources",
+      "file": "resources.html",
+      "showInNav": true
+    },
+    {
+      "name": "Education",
+      "file": "education.html",
+      "showInNav": false
+    },
+    {
+      "name": "Code of Conduct",
+      "file": "code-of-conduct.html",
+      "showInNav": true
+    },
+    {
+      "name": "Donate",
+      "file": "donate.html",
+      "showInNav": true
+    },
+    {
+      "name": "Fund",
+      "file": "fund.html",
+      "showInNav": false
+    },
+    {
+      "name": "History",
+      "file": "history.html",
+      "showInNav": false
+    },
+    {
+      "name": "Press",
+      "file": "press.html",
+      "showInNav": false
+    },
+    {
+      "name": "Contact",
+      "file": "contact.html",
+      "showInNav": false
+    },
+    {
+      "name": "Press",
+      "file": "press.html",
+      "showInNav": true
+    },
+    {
+      "name": "Store",
+      "url": "https://louisvillemakesgames.printify.me",
+      "showInNav": true,
+      "param": "target=\"_blank\""
+    },
+    {
+      "name": "getjammin",
+      "file": "getjammin.html",
+      "showInNav": false
+    }
+  ]
+}

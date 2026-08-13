@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OG Option C - Dominant Title and Badges</title>
+  <style>
+    :root {
+      --ink: #fffcfb;
+      --soft: #f0e9ff;
+      --purple: #5a42bf;
+      --purple-deep: #2f236f;
+      --yellow: #ffd45a;
+      --aqua: #59e3d9;
+      --pink: #ff86cc;
+      --lime: #b6f27c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 20%, #3b2f83, #1a1538 60%);
+      font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+
+    .stage {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: none;
+      background-image: url("https://lmg.cool/camp/images/photos/opt-gallery-6.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: calc(50% + 150px) center;
+      color: var(--ink);
+      box-shadow: 0 45px 90px rgb(0 0 0 / 45%);
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 0% 0%, rgb(64 38 150 / 96%) 0%, rgb(64 38 150 / 96%) 28%, rgb(64 38 150 / 66%) 44%, rgb(64 38 150 / 12%) 66%, rgb(64 38 150 / 0%) 100%),
+        linear-gradient(90deg, rgb(58 39 136 / 40%) 0%, rgb(58 39 136 / 26%) 30%, rgb(58 39 136 / 12%) 50%, rgb(58 39 136 / 3%) 68%, rgb(58 39 136 / 0%) 86%),
+        linear-gradient(180deg, rgb(44 31 96 / 24%), rgb(22 16 52 / 14%)),
+        linear-gradient(135deg, rgb(98 79 184 / 24%), rgb(255 155 92 / 10%));
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top left, left center, center, center;
+      transform-origin: center;
+      transform: translateY(-50px) rotate(-4deg) scale(1.08);
+    }
+
+    .dot-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-image: radial-gradient(rgb(255 255 255 / 15%) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+      mask-image: linear-gradient(transparent, black 14%, black 90%, transparent);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      padding: 52px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 14ch;
+      font-size: 136px;
+      line-height: 0.96;
+      text-transform: uppercase;
+      letter-spacing: -0.025em;
+      text-shadow: 0 7px 20px rgb(8 5 22 / 36%);
+    }
+
+    .schedule {
+      margin: 0;
+      font-size: 72px;
+      line-height: 1.02;
+      font-weight: 900;
+      color: var(--yellow);
+      text-shadow: 0 6px 16px rgb(10 8 28 / 34%);
+    }
+
+    .schedule-time {
+      font-size: 0.72em;
+      font-weight: 700;
+    }
+
+    .badge-wall {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      max-width: 64%;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      height: 58px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgb(255 255 255 / 42%);
+      color: #22174f;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1;
+      box-shadow: 5px 5px 0 rgb(31 21 71 / 46%);
+      white-space: nowrap;
+      width: fit-content;
+    }
+
+    .badge.a { background: linear-gradient(140deg, #ffe598, #ffd45a); }
+    .badge.b { background: linear-gradient(140deg, #9cf2e9, var(--aqua)); }
+    .badge.c {
+      background: linear-gradient(140deg, #ffe598, #ffd45a);
+      color: #1c1739;
+    }
+    .badge.d { background: linear-gradient(140deg, #ffc4ea, var(--pink)); }
+    .badge.e { background: linear-gradient(140deg, #dbf9a8, var(--lime)); }
+
+    .age {
+      display: inline-flex;
+      align-items: center;
+      height: 58px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgb(255 255 255 / 44%);
+      background: linear-gradient(140deg, #d7cbff, #b29dff);
+      color: #20194b;
+      font-size: 40px;
+      font-weight: 600;
+      box-shadow: 6px 6px 0 rgb(33 23 74 / 46%);
+      width: fit-content;
+    }
+
+    .location {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 18px;
+      border-radius: 0;
+      border: 1px solid rgb(255 255 255 / 34%);
+      background: linear-gradient(160deg, rgb(84 64 168 / 68%), rgb(45 33 98 / 62%));
+      color: #fff;
+      text-align: left;
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 1.18;
+      max-width: 100%;
+      box-shadow: 8px 8px 0 rgb(28 20 64 / 42%);
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 20px;
+      padding: 16px 52px 56px;
+      min-height: 300px;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      background: linear-gradient(160deg, rgb(55 39 121 / 74%), rgb(31 23 74 / 72%));
+      box-shadow: none;
+    }
+
+    .footer-left {
+      display: grid;
+      align-items: end;
+    }
+
+    .footer-left img {
+      display: block;
+      width: 544px;
+      height: auto;
+      margin-left: -30px;
+      margin-top: 18px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 14px rgb(15 10 35 / 38%));
+    }
+
+    .footer-right {
+      position: absolute;
+      right: 52px;
+      bottom: 38px;
+      display: flex;
+      align-items: end;
+      gap: 24px;
+    }
+
+    .footer-right-text {
+      display: grid;
+      justify-items: end;
+      align-items: end;
+      gap: 8px;
+      text-align: right;
+      margin-bottom: 12px;
+    }
+
+    .footer-address {
+      position: absolute;
+      left: 52px;
+      bottom: 36px;
+      color: #fff;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1.12;
+    }
+
+    .cta {
+      text-align: right;
+    }
+
+    .cta .line-1 {
+      display: block;
+      font-size: 62px;
+      font-weight: 900;
+      color: var(--yellow);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .cta .line-2 {
+      display: block;
+      margin-top: 4px;
+      font-size: 96px;
+      font-weight: 900;
+      line-height: 0.95;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .qr-wrap {
+      display: grid;
+      place-items: center;
+      width: 218px;
+      height: 218px;
+      margin-left: 10px;
+      padding: 8px;
+      border-radius: 10px;
+      background: rgb(255 255 255 / 95%);
+      box-shadow: 0 6px 18px rgb(12 9 28 / 35%);
+    }
+
+    .qr-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .scholarship-note {
+      margin: 0;
+      background: none;
+      border: 0;
+      padding: 0;
+      color: #f0e9ff;
+      font-size: 31px;
+      font-weight: 600;
+      line-height: 1;
+      text-shadow: 0 4px 12px rgb(10 8 28 / 34%);
+    }
+  </style>
+</head>
+<body>
+  <main class="stage" aria-label="Option C OG graphic">
+    <div class="hero-gradient" aria-hidden="true"></div>
+    <div class="dot-grid" aria-hidden="true"></div>
+
+    <div class="content">
+      <h1>Game Design Camp for Teens</h1>
+      <p class="schedule">July 20-24 · <span class="schedule-time">9:00 AM-5:00 PM</span></p>
+
+      <section class="badge-wall" aria-label="Program highlights">
+        <span class="badge d">Build And Showcase a Finished Game</span>
+        <span class="badge b">Code + Art + Animation + Music</span>
+        <span class="badge e">Godot Engine</span>
+        <span class="age">Ages 14-18</span>
+        <span class="badge c">$100</span>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-left">
+          <img src="images/logos/lmg-horizontal-dark.svg" alt="Louisville Makes Games logo">
+        </div>
+        <div class="footer-right">
+          <div class="footer-right-text">
+            <div class="cta">
+              <span class="line-1">Sign Up Now</span>
+              <span class="line-2">lmg.cool/camp</span>
+            </div>
+            <p class="scholarship-note">Scholarships Available</p>
+          </div>
+          <div class="qr-wrap" aria-label="QR code for lmg.cool/camp">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Flmg.cool%2Fcamp" alt="QR code linking to lmg.cool/camp">
+          </div>
+        </div>
+        <div class="footer-address">702 Logan St, Louisville KY</div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
