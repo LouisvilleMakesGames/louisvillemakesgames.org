@@ -11,10 +11,9 @@
         "showInNav": true
       },
       {
-        "name": "Godot Summer Camp 2026",
+        "name": "Summer Camp",
         "file": "camp/index.html",
-        "showInNav": true,
-        "class": "nav-link-camp"
+        "showInNav": true
       },
       {
         "name": "Local Game Harvest-2024",
@@ -34,7 +33,7 @@
       {
         "name": "Warp Zone",
         "file": "warpzone.html",
-        "showInNav": true
+        "showInNav": false
       },
       {
         "name": "Resources",
