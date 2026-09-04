@@ -52,7 +52,8 @@
     {
       "name": "Donate",
       "file": "donate.html",
-      "showInNav": true
+      "showInNav": true,
+      "class": "nav-link-donate"
     },
     {
       "name": "Fund",
