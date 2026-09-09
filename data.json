@@ -50,78 +50,93 @@
         "name": "GIVE FOR GOOD",
         "file": "index.html",
         "showInNav": true,
+        "prettyUrl": "/",
         "class": "nav-link-g4g"
       },
       {
         "name": "Local Game Harvest-2025",
         "file": "local-game-harvest-2025.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/local-game-harvest-2025"
       },
       {
         "name": "Local Game Harvest-2024",
         "file": "local-game-harvest-2024.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/local-game-harvest-2024"
       },
       {
         "name": "Blog",
         "file": "blog.html",
-        "showInNav": true
+        "showInNav": true,
+        "prettyUrl": "/blog"
       },
       {
         "name": "Games",
         "file": "games.html",
-        "showInNav": true
+        "showInNav": true,
+        "prettyUrl": "/games"
       },
       {
         "name": "Warp Zone",
         "file": "warpzone.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/warpzone"
       },
       {
         "name": "Resources",
         "file": "resources.html",
-        "showInNav": true
+        "showInNav": true,
+        "prettyUrl": "/resources"
       },
       {
         "name": "Education",
         "file": "education.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/education"
       },
       {
         "name": "Code of Conduct",
         "file": "code-of-conduct.html",
-        "showInNav": true
+        "showInNav": true,
+        "prettyUrl": "/code-of-conduct"
       },
       {
         "name": "Donate",
         "file": "donate.html",
         "showInNav": true,
+        "prettyUrl": "/donate",
         "class": "nav-link-donate"
       },
       {
         "name": "Fund",
         "file": "fund.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/fund"
       },
       {
         "name": "History",
         "file": "history.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/history"
       },
       {
         "name": "Press",
         "file": "press.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/press"
       },
       {
         "name": "Contact",
         "file": "contact.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/contact"
       },
       {
         "name": "Press",
         "file": "press.html",
-        "showInNav": true
+        "showInNav": true,
+        "prettyUrl": "/press"
       },
       {
         "name": "Store",
@@ -133,7 +148,8 @@
       {
         "name": "getjammin",
         "file": "getjammin.html",
-        "showInNav": false
+        "showInNav": false,
+        "prettyUrl": "/getjammin"
       }
     ]
   },

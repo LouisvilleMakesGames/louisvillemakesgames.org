@@ -72,6 +72,10 @@ function addPageData(data) {
       if (page.file){
         var pageName = page.file.replace(".html", "").replace("/", "").toLowerCase();
 
+        if (!page.file.includes("http")) {
+          page.prettyUrl = toPrettyUrl(page.file);
+        }
+
         
         var jsonPath = path.join(src, "pages", pageName + ".json");
         if (fs.existsSync(jsonPath)){
@@ -109,8 +113,14 @@ data.site.pages.forEach((page) => {
   if (page.file && !page.file.includes('http')) {
     var pageName = page.file.replace(".html", "").toLowerCase();
     var fileName = page.file;
+    var legacyOutputPath = path.join(dest, fileName);
+    var prettyOutputPath = path.join(dest, toPrettyOutputPath(fileName));
     
-    createPage(pageName, data, path.join(dest, fileName), page);
+    createPage(pageName, data, legacyOutputPath, page);
+
+    if (prettyOutputPath !== legacyOutputPath) {
+      createPage(pageName, data, prettyOutputPath, page);
+    }
   }
 });
 
@@ -141,6 +151,8 @@ function createPage(templateName, data, outputFileName, pageMeta) {
   var giveForGoodCampaign = data.site && data.site.campaigns && data.site.campaigns.giveForGood
     ? data.site.campaigns.giveForGood
     : null;
+
+  makeDirIfNotExist(path.dirname(outputFileName));
 
   if (
     pageMeta &&
@@ -201,6 +213,37 @@ function getDirectories(path) {
 
 function makeDirIfNotExist(filePath) {
   if (!fs.existsSync(filePath)){
-    fs.mkdirSync(filePath);
+    fs.mkdirSync(filePath, { recursive: true });
   }
+}
+
+function toPrettyUrl(fileName) {
+  var normalized = String(fileName || "").replace(/^\/+/, "");
+  if (!normalized) {
+    return "/";
+  }
+
+  if (normalized.toLowerCase() === "index.html") {
+    return "/";
+  }
+
+  if (normalized.toLowerCase().endsWith(".html")) {
+    return "/" + normalized.slice(0, -5);
+  }
+
+  return "/" + normalized.replace(/\/+$/, "");
+}
+
+function toPrettyOutputPath(fileName) {
+  var normalized = String(fileName || "").replace(/^\/+/, "");
+  if (!normalized || normalized.toLowerCase() === "index.html") {
+    return "index.html";
+  }
+
+  if (normalized.toLowerCase().endsWith(".html")) {
+    normalized = normalized.slice(0, -5);
+  }
+
+  normalized = normalized.replace(/\/+$/, "");
+  return path.join(normalized, "index.html");
 }
