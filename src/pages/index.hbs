@@ -1,12 +1,11 @@
 
-{{!-- <head>
-  <meta charset="UTF-8">
-  
-  </head>
-  
-  {{> g4g}} --}}
-
 {{>header}}
+
+{{#if site.campaigns.giveForGood.enabled}}
+{{#if site.campaigns.giveForGood.homepageTakeoverEnabled}}
+{{> g4g}}
+{{/if}}
+{{/if}}
 
 <main class="container my-5">
 

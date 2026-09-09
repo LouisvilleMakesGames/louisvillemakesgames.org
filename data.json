@@ -4,16 +4,58 @@
     "subtitle": "subtitle",
     "description": "description",
     "google-analytics-id": "",
+    "campaigns": {
+      "giveForGood": {
+        "enabled": true,
+        "headerBannerEnabled": true,
+        "homepageTakeoverEnabled": true,
+        "donateNavHighlight": true,
+        "redirectDonateToHome": true,
+        "donateUrl": "https://www.giveforgoodlouisville.org/donate/Louisville-Makes-Games",
+        "headerBannerText": "Donate to Give For Good 2026",
+        "headerBannerSubtext": "Support Louisville game creators",
+        "heroTitle": "Together we define our own success!",
+        "heroLogo": "img/g4g/GFGL_3 line_all white.png",
+        "heroStreamTitle": "WATCH OUR LIVE STREAM",
+        "donationMeterEnabled": true,
+        "donationGoalCents": 1000000,
+        "donationDataUrl": "https://www.giveforgoodlouisville.org/api/v4/story/Louisville-Makes-Games.json?include_all_details=true&requested_type=organization",
+        "donationProxyPrefix": "https://api.allorigins.win/raw?url=",
+        "showAuction": false,
+        "heroMessages": [
+          "Arts orgs in our city are feeling the pinch",
+          "Help us keep our creative community space alive!",
+          "Every dollar counts",
+          "Help keep the creativity flowing"
+        ],
+        "streamLinks": [
+          {
+            "label": "Twitch",
+            "url": "https://www.twitch.tv/louisvillemakesgames",
+            "icon": "fa-brands fa-twitch"
+          },
+          {
+            "label": "Youtube",
+            "url": "https://www.youtube.com/watch?v=a_CyB_EBOog",
+            "icon": "fa-brands fa-youtube"
+          }
+        ],
+        "ctaSub": "Give for Good Louisville is going on NOW!",
+        "ctaMain": "Donate Now!",
+        "galleryImages": []
+      }
+    },
     "pages": [
       {
-        "name": "Home",
+        "name": "GIVE FOR GOOD",
         "file": "index.html",
-        "showInNav": true
+        "showInNav": true,
+        "class": "nav-link-g4g"
       },
       {
         "name": "Local Game Harvest-2025",
         "file": "local-game-harvest-2025.html",
-        "showInNav": true
+        "showInNav": false
       },
       {
         "name": "Local Game Harvest-2024",
@@ -33,7 +75,7 @@
       {
         "name": "Warp Zone",
         "file": "warpzone.html",
-        "showInNav": true
+        "showInNav": false
       },
       {
         "name": "Resources",
@@ -53,7 +95,8 @@
       {
         "name": "Donate",
         "file": "donate.html",
-        "showInNav": true
+        "showInNav": true,
+        "class": "nav-link-donate"
       },
       {
         "name": "Fund",
@@ -94,7 +137,103 @@
       }
     ]
   },
-  "index": {},
+  "g4gStreamSchedule": {
+    "sectionTitle": "Give for Good week Live Stream Schedule",
+    "workNight": {
+      "timeTitle": "Wednesday 8pm - 10pm",
+      "title": "Indie Work Night Live",
+      "description": "Indie Work Night is a weekly tradition at Warp Zone Louisville where folks come for dedicated time to work on their projects in the company of other game creators. This one is special because we will be live streaming and interviewing folks about their projects."
+    },
+    "thursday": {
+      "title": "THURSDAY Give for Good MEGA Stream",
+      "slots": [
+        {
+          "time": "9am",
+          "text": "Intro (previous 1-hour jam games)"
+        },
+        {
+          "time": "10am",
+          "text": "Summer camp games"
+        },
+        {
+          "time": "11am",
+          "text": "Velocity Uncapped w/ Alex Garbus"
+        },
+        {
+          "time": "11:30am",
+          "text": "Super Hitbox Maker w/ galactical"
+        },
+        {
+          "time": "12pm",
+          "text": "<em>Lunch time</em>"
+        },
+        {
+          "time": "12:30pm",
+          "text": "1-hour Micro Jam Live w/ galactical"
+        },
+        {
+          "time": "1:30pm",
+          "text": "Warp Zine w/ Bad Taste Games"
+        },
+        {
+          "time": "2pm",
+          "text": "Makealotl + Godot Tutorials w/ Kristen Salas <em>(remote)</em>"
+        },
+        {
+          "time": "3pm",
+          "text": "Fabelight w/ Super8BitRafa <em>(remote)</em>"
+        },
+        {
+          "time": "4pm",
+          "text": "ChainStaff w/ Mommy's Best Games"
+        },
+        {
+          "time": "5pm",
+          "text": "nightseed w/ Allen Michael Brower"
+        },
+        {
+          "time": "5:30pm",
+          "text": "Fashion FUPA w/ fufroom"
+        },
+        {
+          "time": "6pm",
+          "text": "<em>Dinner time</em> (#GiveForGoodLouLIVE Trivia @ 6:15)"
+        },
+        {
+          "time": "6:30pm",
+          "text": "Alablaster w/ MetaJ92 <em>(remote)</em>"
+        },
+        {
+          "time": "7pm",
+          "text": "Greatest Half-hour in Snail Racing (Greatest Two Minutes in Giving @ 7:15-7:17)"
+        },
+        {
+          "time": "7:30pm",
+          "text": "The Magic Bookstore w/ Dream Distillery Games <em>(remote)</em>"
+        },
+        {
+          "time": "8:30pm",
+          "text": "Voice Acting for Games w/ Addison Corcoran"
+        },
+        {
+          "time": "9pm",
+          "text": "Break"
+        },
+        {
+          "time": "9:30pm",
+          "text": "Game Boy Advance homebrew w/ Xanthus"
+        },
+        {
+          "time": "10pm",
+          "text": "1-hour Micro Jam submissions"
+        },
+        {
+          "time": "11pm",
+          "text": "Finale (hot pepper challenge)"
+        }
+      ]
+    }
+  },
   "local-game-harvest-2025": {
     "lgh": [
       {

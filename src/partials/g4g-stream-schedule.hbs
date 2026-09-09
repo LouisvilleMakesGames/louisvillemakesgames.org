@@ -1,0 +1,30 @@
+{{#if schedule}}
+<h2 class="g4g-schedule-title">{{schedule.sectionTitle}}</h2>
+
+<div class="g4g-schedule-band" aria-label="Give for Good stream schedule">
+  <aside class="g4g-worknight-card">
+    <h3>{{schedule.workNight.timeTitle}}</h3>
+    <h4>{{schedule.workNight.title}}</h4>
+    <img class="g4g-worknight-gif" src="img/scott-hacking.gif" alt="Scott hacking during Indie Work Night" loading="lazy" decoding="async" />
+    <p>{{schedule.workNight.description}}</p>
+  </aside>
+
+  <section class="g4g-thursday-schedule">
+    <h3>{{schedule.thursday.title}}</h3>
+    <ul>
+      {{#each schedule.thursday.slots}}
+      <li><strong>{{time}}</strong> - {{{text}}}</li>
+      {{/each}}
+    </ul>
+  </section>
+</div>
+
+<div class="g4g-schedule-stream-row" aria-label="Extra live stream links">
+  {{#each streamLinks}}
+  <a href="{{url}}" target="_blank" rel="noopener noreferrer" class="stream-button">
+    {{#if icon}}<i class="{{icon}}" aria-hidden="true"></i>{{/if}}
+    <span>{{label}}</span>
+  </a>
+  {{/each}}
+</div>
+{{/if}}

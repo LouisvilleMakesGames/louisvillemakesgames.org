@@ -3,16 +3,56 @@
   "subtitle": "subtitle",
   "description": "description",
   "google-analytics-id": "",
+  "campaigns": {
+    "giveForGood": {
+      "enabled": true,
+      "headerBannerEnabled": true,
+      "homepageTakeoverEnabled": true,
+      "donateNavHighlight": true,
+      "redirectDonateToHome": true,
+      "donateUrl": "https://www.giveforgoodlouisville.org/donate/Louisville-Makes-Games",
+      "headerBannerText": "Donate to Give For Good 2026",
+      "headerBannerSubtext": "Support Louisville game creators",
+      "heroTitle": "Together we define our own success!",
+      "heroLogo": "img/g4g/GFGL_3 line_all white.png",
+      "heroStreamTitle": "WATCH OUR LIVE STREAM",
+      "donationMeterEnabled": true,
+      "donationGoalCents": 1000000,
+      "donationDataUrl": "https://www.giveforgoodlouisville.org/api/v4/story/Louisville-Makes-Games.json?include_all_details=true&requested_type=organization",
+      "donationProxyPrefix": "https://api.allorigins.win/raw?url=",
+      "showAuction": false,
+      "heroMessages": [
+        "Arts orgs in our city are feeling the pinch",
+        "Help us keep our creative community space alive!",
+        "Every dollar counts",
+        "Help keep the creativity flowing"
+      ],
+      "streamLinks": [
+        {
+          "label": "Twitch",
+          "url": "https://www.twitch.tv/louisvillemakesgames",
+          "icon": "fa-brands fa-twitch"
+        },
+        {
+          "label": "Youtube",
+          "url": "https://www.youtube.com/watch?v=a_CyB_EBOog",
+          "icon": "fa-brands fa-youtube"
+        }
+      ],
+      "ctaSub": "Give for Good Louisville is going on NOW!",
+      "ctaMain": "Donate Now!"
+    }
+  },
   "pages":[
     {
-      "name": "Home",
+      "name": "GIVE FOR GOOD",
       "file": "index.html",
       "showInNav": true
     },
       {
       "name": "Local Game Harvest-2025",
       "file": "local-game-harvest-2025.html",
-      "showInNav": true
+      "showInNav": false
     },
     {
       "name": "Local Game Harvest-2024",
@@ -32,7 +72,7 @@
     {
       "name": "Warp Zone",
       "file": "warpzone.html",
-      "showInNav": true
+      "showInNav": false
     },
     {
       "name": "Resources",

@@ -39,6 +39,32 @@ addPageData(data);
 
 function addPageData(data) {
   var newData = data;
+  var g4gSchedulePath = path.join(src, "pages", "g4g-stream-schedule.json");
+  if (fs.existsSync(g4gSchedulePath)) {
+    newData.g4gStreamSchedule = require("./" + g4gSchedulePath);
+  }
+
+  var giveForGoodCampaign = newData.site && newData.site.campaigns && newData.site.campaigns.giveForGood
+    ? newData.site.campaigns.giveForGood
+    : null;
+
+  if (giveForGoodCampaign) {
+    var galleryDir = path.join(src, "img", "g4g", "images");
+    if (fs.existsSync(galleryDir)) {
+      giveForGoodCampaign.galleryImages = fs.readdirSync(galleryDir)
+        .filter(function(fileName) {
+          return /\.(png|jpe?g|webp)$/i.test(fileName);
+        })
+        .sort(function(a, b) {
+          return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+        })
+        .map(function(fileName) {
+          return "img/g4g/images/" + fileName;
+        });
+    } else {
+      giveForGoodCampaign.galleryImages = [];
+    }
+  }
 
 
   newData.site.pages.forEach((page) => {
@@ -54,6 +80,14 @@ function addPageData(data) {
      } else{
       page.file = page.url;
      }
+
+      if (giveForGoodCampaign && giveForGoodCampaign.enabled && giveForGoodCampaign.donateNavHighlight && page.file === "donate.html") {
+      page.class = page.class ? page.class + " nav-link-donate" : "nav-link-donate";
+      }
+
+      if (giveForGoodCampaign && giveForGoodCampaign.enabled && page.file === "index.html") {
+      page.class = page.class ? page.class + " nav-link-g4g" : "nav-link-g4g";
+      }
    
 
    
@@ -76,7 +110,7 @@ data.site.pages.forEach((page) => {
     var pageName = page.file.replace(".html", "").toLowerCase();
     var fileName = page.file;
     
-    createPage(pageName, data, path.join(dest, fileName));
+    createPage(pageName, data, path.join(dest, fileName), page);
   }
 });
 
@@ -103,8 +137,47 @@ function insertPartials(templateName) {
 }
 
 
-function createPage(templateName, data, outputFileName) {
-  var html = renderFromExternalTemplate(insertPartials(templateName), data);
+function createPage(templateName, data, outputFileName, pageMeta) {
+  var giveForGoodCampaign = data.site && data.site.campaigns && data.site.campaigns.giveForGood
+    ? data.site.campaigns.giveForGood
+    : null;
+
+  if (
+    pageMeta &&
+    pageMeta.file === "donate.html" &&
+    giveForGoodCampaign &&
+    giveForGoodCampaign.enabled &&
+    giveForGoodCampaign.redirectDonateToHome
+  ) {
+    var redirectHtml = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting...</title>
+  <script>
+    window.location.replace("index.html");
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="index.html">home</a>...</p>
+</body>
+</html>`;
+
+    fs.writeFileSync(outputFileName, redirectHtml);
+    return;
+  }
+
+  var renderData = Object.assign({}, data);
+  renderData.currentPage = {
+    slug: templateName,
+    isHome: templateName === "index",
+    file: pageMeta && pageMeta.file ? pageMeta.file : "",
+    name: pageMeta && pageMeta.name ? pageMeta.name : ""
+  };
+
+  var html = renderFromExternalTemplate(insertPartials(templateName), renderData);
   fs.writeFileSync(outputFileName, html);
 }
 

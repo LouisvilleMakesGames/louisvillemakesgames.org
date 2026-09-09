@@ -18,6 +18,86 @@ a:hover {
   color: white;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.nav-link-donate {
+  color: #ea3657 !important;
+  font-weight: bold;
+}
+
+.nav-link-g4g,
+.nav-link-donate {
+  color: #ea3657 !important;
+  font-weight: bold;
+  display: inline-block;
+  transform-origin: center;
+  animation: nav-wiggle 3s ease-in-out infinite;
+}
+
+.nav-link-g4g:hover,
+.nav-link-donate:hover {
+  color: #ff5a78 !important;
+  animation: nav-wiggle-hover 0.55s ease-in-out infinite;
+}
+
+@keyframes nav-wiggle {
+  0%,
+  100% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(-1.2deg) translateX(-0.5px); }
+  75% { transform: rotate(1.2deg) translateX(0.5px); }
+}
+
+@keyframes nav-wiggle-hover {
+  0%,
+  100% { transform: rotate(0deg) translateX(0); }
+  20% { transform: rotate(-3deg) translateX(-1px); }
+  40% { transform: rotate(2.6deg) translateX(1px); }
+  60% { transform: rotate(-2.4deg) translateX(-1px); }
+  80% { transform: rotate(2.2deg) translateX(1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link-g4g,
+  .nav-link-donate,
+  .nav-link-g4g:hover,
+  .nav-link-donate:hover {
+    animation: none;
+  }
+}
+
+.donate-banner {
+  display: block;
+  background: linear-gradient(135deg, #ea3657, #ed4466);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.3s;
+}
+
+.donate-banner:hover {
+  background: linear-gradient(135deg, #c92e4a, #ea3657);
+  color: white;
+}
+
+.donate-banner i {
+  margin: 0 8px;
+}
+
+.donate-banner-sub {
+  display: inline-block;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0 8px;
+}
+
 
 main.container {
   margin-top: 150px !important;

@@ -5,8 +5,11 @@ body{
 .save-wz-banner {
   position: relative; /* root stacking context */
 
-  background: url('https://louisvillemakesgames.org/img/comic-dots-banner.png') no-repeat center top / 100% auto;
-  overflow-x: hidden;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+    url('https://louisvillemakesgames.org/img/comic-dots-banner.png') no-repeat center top / 100% auto;
+  overflow: hidden;
+  border-bottom: 4px dotted rgba(255, 255, 255, 0.9);
 }
 
 /* keep the container positioned, but DO NOT give it a z-index */
@@ -18,29 +21,116 @@ body{
 
 /* TEXT: must be positioned for z-index to work */
 .save-wz-banner-text {
-  position: absolute;          /* <-- add this */
-  z-index: 30;                 /* highest */
-  top: 20px;
-  left: 40px;
-  width: 450px;
+  position: relative;
+  z-index: 30;
+  top: auto;
+  left: auto;
+  width: min(100%, 560px);
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 70px;
+  font-size: 28px;
   font-weight: bold;
   color: #fff;
-  line-height: 95%;
+  line-height: 1.1;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  overflow: visible;
+  isolation: isolate;
+  min-height: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
   text-shadow:
-    0 0 5px rgba(255, 0, 0, 0.6),
-    0 0 10px rgba(255, 0, 0, 0.5),
-    0 0 20px rgba(255, 0, 0, 0.4),
-    0 0 40px rgba(255, 0, 0, 0.3);
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.g4g-left-blip {
+  position: relative;
+  z-index: 7;
+  margin-top: 0;
+  height: auto;
+  font-size: 0.88em;
+  max-width: 520px;
+  overflow: visible;
+}
+
+.g4g-photo-deck {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.g4g-deck-card {
+  position: absolute;
+  width: clamp(130px, 42%, 195px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.72);
+  top: 50%;
+  left: 57%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  transition: transform 0.42s ease, opacity 0.42s ease;
+}
+
+.g4g-deck-card.deck-top {
+  z-index: 6;
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(2deg) scale(1);
+}
+
+.g4g-deck-card.deck-mid {
+  z-index: 5;
+  opacity: 1;
+  transform: translate(-45%, -46%) rotate(-4deg) scale(0.96);
+}
+
+.g4g-deck-card.deck-back {
+  z-index: 4;
+  opacity: 1;
+  transform: translate(-39%, -42%) rotate(7deg) scale(0.92);
+}
+
+.g4g-deck-card.deck-out {
+  z-index: 3;
+  opacity: 1;
+  transform: translate(-102%, -62%) rotate(-16deg) scale(0.86);
+}
+
+.g4g-deck-card.deck-hidden {
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.84);
+}
+
+.g4g-hero-logo {
+  position: relative;
+  z-index: 31;
+  top: auto;
+  left: auto;
+  width: 210px;
+  height: auto;
+  display: block;
+  margin: 0 0 8px;
 }
 
 /* GROUP: place the image + bolts in one positioned wrapper */
 .megaphone-container{
   position: absolute;
-  z-index: 10;                 /* behind bolts and text */
-  top: -70px !important;
- left: 150px;
+  z-index: 6;                  /* behind rotating text, below logo */
+  top: 46px !important;
+  left: 170px;
+  width: 335px;
+  height: 235px;
+  margin: 0;
+  overflow: visible;
+  pointer-events: none;
 }
 
 /* MEGAPHONE: keep transform, but its z-index only matters within container */
@@ -58,24 +148,31 @@ body{
 }
 
 .bolt1{
-  top: 60px;
-  left: 250px;
+  top: 46px;
+  left: 288px;
   transform: rotate(90deg) scale(30%);
 }
 
 .bolt2{
-  top: -90px;
-  left: 290px;
+  top: -104px;
+  left: 292px;
   transform: rotate(45deg) scale(35%);
 }
 
 
 .left-banner{
-  height: 200px;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 0 24px;
 }
 
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800&display=swap');
 
 
 @media (min-width: 1200px) and (max-width: 1399px) {
@@ -133,28 +230,35 @@ h2{
 }
 
 .banner-right{
-  z-index: 2000;
+  position: relative;
+  z-index: 1;
   background: rgba(0,0,0,0.4);
   min-height: 200px;
-}
-
-.blip-text-container{
-   height: 120px;
-padding-top: 30px;
 }
 
  #blip-text {
 
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
-   font-size: 25px !important;
-   text-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+  font-size: clamp(2.1rem, 3.6vw, 3.25rem) !important;
+  text-shadow: 8px 8px 14px rgba(0,0,0,0.55);
+  color: #fff;
+  line-height: 1.04;
+  margin: 0;
+  height: 3.15em;
+  min-height: 3.15em;
+  max-height: 3.15em;
+  overflow: hidden;
+  display: block;
    
   }
 
 .donate-button {
-  display: inline-block;
-  padding: 14px 28px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 28px !important;
   background: linear-gradient(to bottom, #ff4b5c, #c71c2c); /* red gradient */
   color: white;
   font-weight: bold;
@@ -163,21 +267,46 @@ padding-top: 30px;
   border-radius: 10px;
   box-shadow: 0 6px 0 #8b131f, /* bottom edge */
               0 6px 15px rgba(0,0,0,0.3); /* soft shadow */
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  transform-origin: center;
+  animation: donate-wiggle-idle 2.8s ease-in-out infinite;
+}
+
+.donate-copy {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.1;
 }
 
 .donate-button:hover {
-  background: linear-gradient(to bottom, #ff5c6f, #d62828);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 #8b131f,
-              0 10px 20px rgba(0,0,0,0.35);
+  background: linear-gradient(to bottom, #ff7284, #e13a49);
+  color: #fff !important;
+  box-shadow: 0 10px 0 #8b131f,
+              0 14px 24px rgba(0,0,0,0.38);
+  animation: donate-wiggle-hover 0.55s ease-in-out infinite;
 }
 
 .donate-button:active {
   transform: translateY(4px);
   box-shadow: 0 2px 0 #8b131f,
               0 4px 10px rgba(0,0,0,0.25);
+}
+
+@keyframes donate-wiggle-idle {
+  0%,
+  100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-0.8deg) scale(1.005); }
+  75% { transform: rotate(0.8deg) scale(1.005); }
+}
+
+@keyframes donate-wiggle-hover {
+  0%,
+  100% { transform: rotate(0deg) scale(1.06); }
+  20% { transform: rotate(-3deg) scale(1.09); }
+  40% { transform: rotate(2.5deg) scale(1.08); }
+  60% { transform: rotate(-2.3deg) scale(1.09); }
+  80% { transform: rotate(2deg) scale(1.07); }
 }
 
 
@@ -291,29 +420,453 @@ padding-top: 30px;
 
 
   .stream-button {
-  display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   padding: 14px 28px !important;
-  background: linear-gradient(to bottom, #4ba3ff, #1c4cc7); /* blue gradient */
-  color: white;
+  background: linear-gradient(to bottom, #ffe46a, #f2bf26);
+  color: #2d2200;
   font-weight: bold;
   font-size: 1.25rem;
   text-decoration: none;
   border-radius: 10px;
-  box-shadow: 0 6px 0 #13338b, /* bottom edge */
+  box-shadow: 0 6px 0 #a27700,
               0 6px 15px rgba(0,0,0,0.3); /* soft shadow */
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.stream-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+.banner-right .stream-button,
+.banner-right .donate-button {
+  width: min(100%, 360px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-right .stream-button {
+  width: clamp(220px, 44%, 320px);
+}
+
+.banner-right .donate-button {
+  margin-top: 14px;
+  margin-bottom: 18px;
+}
+
+.g4g-donation-meter {
+  width: min(100%, 360px);
+  margin: 0 auto 18px;
+  padding: 12px 12px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2c2f3a;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.g4g-meter-content {
+  transition: opacity 0.18s ease;
+}
+
+.g4g-donation-meter.is-loading .g4g-meter-content {
+  opacity: 0.18;
+}
+
+.g4g-donation-meter.no-total .g4g-meter-content {
+  opacity: 0;
+}
+
+.g4g-meter-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #283144;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.g4g-donation-meter.is-loading .g4g-meter-loading {
+  opacity: 1;
+}
+
+.g4g-meter-headline {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+
+.g4g-meter-headline strong {
+  color: #ea3657;
+}
+
+.g4g-meter-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background-color: #e7e8ec;
+  background-image: linear-gradient(45deg, #d1d3da 25%, transparent 25%, transparent 50%, #d1d3da 50%, #d1d3da 75%, transparent 75%);
+  background-size: 28px 28px;
+  animation: g4g-meter-stripes 1.8s linear infinite;
+  overflow: hidden;
+}
+
+.g4g-meter-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background-color: #ea3657;
+  background-image: linear-gradient(45deg, #b91e3d 25%, transparent 25%, transparent 50%, #b91e3d 50%, #b91e3d 75%, transparent 75%);
+  background-size: 28px 28px;
+  animation: g4g-meter-stripes 1.8s linear infinite;
+  transition: width 0.5s ease;
+}
+
+@keyframes g4g-meter-stripes {
+  from { background-position: 0 0; }
+  to { background-position: 28px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g4g-meter-track,
+  .g4g-meter-fill {
+    animation: none;
+  }
+}
+
+.g4g-meter-meta {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+}
+
+.g4g-schedule-band {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.g4g-worknight-card,
+.g4g-thursday-schedule {
+  background: rgba(14, 15, 18, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(2px);
+}
+
+.g4g-schedule-title {
+  margin: 18px 0 10px;
+  text-align: center;
+  font-family: 'Roboto Slab', 'Rockwell', serif;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #ffe16d;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.38);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+}
+
+.g4g-worknight-card {
+  padding: 14px 14px 16px;
+}
+
+.g4g-worknight-card h3,
+.g4g-thursday-schedule h3 {
+  font-family: 'Roboto Slab', 'Rockwell', serif;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin: 0 0 6px;
+  line-height: 1.05;
+}
+
+.g4g-worknight-card h3 {
+  color: #ffe16d;
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+}
+
+.g4g-worknight-card h4 {
+  font-family: 'Roboto Slab', 'Rockwell', serif;
+  font-weight: 700;
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.g4g-worknight-card p {
+  margin: 0;
+  color: #eef0f7;
+  line-height: 1.32;
+  font-size: 0.98rem;
+}
+
+.g4g-worknight-gif {
+  display: block;
+  width: 100%;
+  max-height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 10px 0 10px;
+}
+
+.g4g-thursday-schedule {
+  padding: 14px 16px 16px;
+}
+
+.g4g-thursday-schedule h3 {
+  color: #ff4b70;
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+}
+
+.g4g-thursday-schedule ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  columns: 2;
+  column-gap: 1.8rem;
+}
+
+.g4g-thursday-schedule li {
+  color: #ffffff;
+  margin-bottom: 0.62rem;
+  break-inside: avoid;
+  line-height: 1.28;
+  font-size: 1.02rem;
+}
+
+.g4g-thursday-schedule li strong {
+  color: #ffe16d;
+}
+
+.g4g-schedule-stream-row {
+  margin: 14px 0 4px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+}
+
+.g4g-schedule-stream-row .stream-button {
+  width: clamp(220px, 28vw, 320px);
+  margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .save-wz-banner .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner-right {
+    order: 1;
+  }
+
+  .left-banner {
+    order: 2;
+    align-items: center;
+  }
+
+  .g4g-hero-logo {
+    width: 186px;
+    margin: 0 auto 10px;
+  }
+
+  .save-wz-banner-text {
+    font-size: 24px;
+    width: 100%;
+    min-height: 0;
+    margin-bottom: 10px;
+  }
+
+  .g4g-left-blip {
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .megaphone-container {
+    display: none;
+  }
+
+  .stream-row {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .left-banner {
+    min-height: 0;
+  }
+
+  #blip-text {
+    font-size: clamp(1.85rem, 9vw, 2.55rem) !important;
+    line-height: 1.02;
+    height: 4.1em;
+    min-height: 4.1em;
+    max-height: 4.1em;
+  }
+
+  .banner-right .donate-button {
+    width: 100%;
+  }
+
+  .banner-right .stream-button {
+    width: calc(50% - 4px);
+    min-width: 0;
+    font-size: 1rem;
+    padding: 12px 10px !important;
+  }
+
+  .g4g-schedule-band {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .g4g-schedule-title {
+    font-size: clamp(1.55rem, 7.2vw, 2rem);
+    margin-top: 12px;
+  }
+
+  .g4g-thursday-schedule ul {
+    columns: 1;
+    padding-left: 1rem;
+  }
+
+  .g4g-thursday-schedule li {
+    font-size: 0.98rem;
+  }
+
+  .g4g-schedule-stream-row {
+    gap: 8px;
+  }
+
+  .g4g-schedule-stream-row .stream-button {
+    width: calc(50% - 4px);
+    min-width: 0;
+    font-size: 1rem;
+    padding: 12px 10px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .save-wz-banner .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner-right {
+    order: 1;
+  }
+
+  .left-banner {
+    order: 2;
+  }
+
+  .left-banner {
+    min-height: 0;
+  }
+
+  .g4g-left-blip {
+    margin-top: 0;
+  }
+
+  .megaphone-container {
+    position: absolute;
+    width: 300px;
+    height: 210px;
+    top: 48px !important;
+    left: 130px;
+    margin: 0;
+    translate: none;
+  }
+
+  .save-wz-banner-text {
+    width: min(100%, 660px);
+  }
+
+  #blip-text {
+    height: 3.35em;
+    min-height: 3.35em;
+    max-height: 3.35em;
+  }
+
+  .g4g-schedule-band {
+    grid-template-columns: 1fr;
+  }
+
+  .g4g-thursday-schedule ul {
+    columns: 1;
+  }
+
+  .g4g-schedule-stream-row .stream-button {
+    width: calc(50% - 7px);
+  }
+}
+
+@media (min-width: 1600px) {
+  .save-wz-banner .container {
+    max-width: 1380px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .save-wz-banner .row {
+    align-items: flex-start !important;
+  }
+
+  .left-banner {
+    margin-top: 0;
+  }
+
+  .g4g-hero-logo {
+    width: 280px;
+  }
+
+  .megaphone-container {
+    top: 30px !important;
+    left: 220px;
+    translate: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g4g-deck-card {
+    transition: none;
+  }
 }
 
 .stream-button:hover {
-  background: linear-gradient(to bottom, #5cafff, #2868d6);
+  background: linear-gradient(to bottom, #ffef95, #f6cb3f);
+  color: #2d2200 !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 #13338b,
+  box-shadow: 0 8px 0 #a27700,
               0 10px 20px rgba(0,0,0,0.35);
+}
+
+.stream-button:hover span,
+.donate-button:hover .sub,
+.donate-button:hover .big {
+  color: #fff !important;
 }
 
 .stream-button:active {
   transform: translateY(4px);
-  box-shadow: 0 2px 0 #13338b,
+  box-shadow: 0 2px 0 #a27700,
               0 4px 10px rgba(0,0,0,0.25);
 }

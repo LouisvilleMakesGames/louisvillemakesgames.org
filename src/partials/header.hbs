@@ -40,8 +40,8 @@
 
 <body>
 
-
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="img/logos/lmg/louisville-makes-games-horzontal-logo-for-dark-bg.svg" style="width: 250px; max-width: 250px;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -54,7 +54,7 @@
            {{#each site.pages}}
         {{#if showInNav}}
         <li class="nav-item">
-          <a class="nav-link" href="{{file}}" {{{param}}}>{{name}}</a>
+          <a class="nav-link{{#if class}} {{class}}{{/if}}" href="{{file}}" {{{param}}}>{{name}}</a>
         </li>
         {{/if}}
         {{/each}}
@@ -63,3 +63,18 @@
       </div>
     </div>
   </nav>
+
+  {{#if site.campaigns.giveForGood.enabled}}
+  {{#if site.campaigns.giveForGood.headerBannerEnabled}}
+  <a href="{{site.campaigns.giveForGood.donateUrl}}" class="donate-banner" target="_blank" rel="noopener noreferrer">
+    <div class="container">
+      <i class="fa-solid fa-heart"></i> {{site.campaigns.giveForGood.headerBannerText}}
+      {{#if site.campaigns.giveForGood.headerBannerSubtext}}
+      <span class="donate-banner-sub">{{site.campaigns.giveForGood.headerBannerSubtext}}</span>
+      {{/if}}
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
+  </a>
+  {{/if}}
+  {{/if}}
+  </header>
