@@ -1,0 +1,345 @@
+{{>header}}
+<style>
+  .wiki-plain {
+    display: block;
+    box-sizing: border-box;
+    max-width: 1120px;
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+    color-scheme: dark;
+    font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+    color: #e6e6e6;
+    line-height: 1.6;
+  }
+
+  .wiki-plain *,
+  .wiki-plain *::before,
+  .wiki-plain *::after {
+    box-sizing: inherit;
+  }
+
+  .wiki-plain a {
+    color: #8ab4f8;
+    text-decoration: none;
+  }
+
+  .wiki-plain a:hover,
+  .wiki-plain a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .wiki-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .wiki-sidebar {
+    position: sticky;
+    top: 1rem;
+    background: #111316;
+    border: 1px solid #2a2d31;
+    border-radius: 4px;
+    padding: 0.85rem;
+  }
+
+  .wiki-sidebar h2 {
+    margin: 0 0 0.6rem;
+    font-size: 1rem;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+    color: #f5f5f5;
+  }
+
+  .wiki-sidebar ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .wiki-sidebar li {
+    margin: 0.35rem 0;
+  }
+
+  .wiki-sidebar a[aria-current="page"] {
+    color: #dbe7ff;
+    font-weight: 700;
+  }
+
+  .wiki-content {
+    background: #13161a;
+    border: 1px solid #2a2d31;
+    border-radius: 4px;
+    padding: 1.1rem 1.3rem;
+  }
+
+  .wiki-page-title {
+    margin: 0 0 1rem;
+    background: none;
+    color: #f2f2f2;
+    padding: 0;
+    transform: none;
+    width: auto;
+    font-size: 1.85rem;
+    border-bottom: 1px solid #2a2d31;
+    padding-bottom: 0.55rem;
+    font-weight: 400;
+  }
+
+  .wiki-doc {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid #25282d;
+  }
+
+  .wiki-doc:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .wiki-doc > h2 {
+    margin: 0 0 0.8rem;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f5f5f5;
+  }
+
+  .wiki-markdown h1,
+  .wiki-markdown h2,
+  .wiki-markdown h3,
+  .wiki-markdown h4,
+  .wiki-markdown h5,
+  .wiki-markdown h6 {
+    font-family: inherit;
+    color: #f2f2f2;
+    margin: 1rem 0 0.55rem;
+    line-height: 1.28;
+    background: transparent;
+    transform: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .wiki-markdown h1,
+  .wiki-markdown h2 {
+    border-bottom: 1px solid #2a2d31;
+    padding-bottom: 0.25rem;
+  }
+
+  .wiki-markdown p,
+  .wiki-markdown ul,
+  .wiki-markdown ol,
+  .wiki-markdown pre,
+  .wiki-markdown blockquote {
+    margin: 0.6rem 0 0.95rem;
+  }
+
+  .wiki-markdown ul,
+  .wiki-markdown ol {
+    padding-left: 1.5rem;
+  }
+
+  .wiki-markdown code {
+    font-family: inherit;
+    font-size: 0.9em;
+    background: #272822;
+    border: 1px solid #3d3e33;
+    border-radius: 3px;
+    padding: 0.05rem 0.28rem;
+    color: #f8f8f2;
+  }
+
+  .wiki-markdown pre {
+    background: #272822;
+    border: 1px solid #3d3e33;
+    border-radius: 4px;
+    padding: 0.75rem;
+    overflow: auto;
+  }
+
+  .wiki-markdown pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: #f8f8f2;
+  }
+
+  .wiki-markdown .hljs {
+    display: block;
+    overflow-x: auto;
+    background: #272822;
+    color: #f8f8f2;
+  }
+
+  .wiki-markdown .hljs-comment,
+  .wiki-markdown .hljs-quote {
+    color: #75715e;
+  }
+
+  .wiki-markdown .hljs-keyword,
+  .wiki-markdown .hljs-selector-tag,
+  .wiki-markdown .hljs-subst {
+    color: #f92672;
+  }
+
+  .wiki-markdown .hljs-number,
+  .wiki-markdown .hljs-literal,
+  .wiki-markdown .hljs-variable,
+  .wiki-markdown .hljs-template-variable,
+  .wiki-markdown .hljs-tag .hljs-attr {
+    color: #ae81ff;
+  }
+
+  .wiki-markdown .hljs-string,
+  .wiki-markdown .hljs-doctag {
+    color: #e6db74;
+  }
+
+  .wiki-markdown .hljs-title,
+  .wiki-markdown .hljs-section,
+  .wiki-markdown .hljs-selector-id {
+    color: #a6e22e;
+  }
+
+  .wiki-markdown .hljs-type,
+  .wiki-markdown .hljs-class .hljs-title {
+    color: #66d9ef;
+  }
+
+  .wiki-markdown .hljs-tag,
+  .wiki-markdown .hljs-name,
+  .wiki-markdown .hljs-attribute {
+    color: #f92672;
+  }
+
+  .wiki-markdown .hljs-regexp,
+  .wiki-markdown .hljs-link {
+    color: #fd971f;
+  }
+
+  .wiki-file-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+
+  .wiki-file-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.52rem 0.82rem;
+    border: 1px solid #4e5a69;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #3b4452 0%, #2b333f 55%, #222a35 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 2px 0 #161b22;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 0.93rem;
+    line-height: 1.2;
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .wiki-plain a.wiki-file-button:link,
+  .wiki-plain a.wiki-file-button:visited {
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  .wiki-plain a.wiki-file-button:hover,
+  .wiki-plain a.wiki-file-button:focus-visible {
+    background: linear-gradient(180deg, #4c5868 0%, #364152 55%, #2b3544 100%);
+    border-color: #6f8199;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 2px 0 #161b22;
+    transform: translateY(-1px);
+  }
+
+  .wiki-plain a.wiki-file-button:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 #161b22;
+  }
+
+  .wiki-plain a.wiki-file-button:hover span,
+  .wiki-plain a.wiki-file-button:focus-visible span {
+    text-decoration: none !important;
+  }
+
+  .wiki-file-button i {
+    font-size: 1rem;
+    color: #ffffff !important;
+  }
+
+  .wiki-file-button i::before {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+
+  .wiki-empty {
+    background: #13161a;
+    border: 1px solid #2a2d31;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+
+  .wiki-passcode-callout {
+    margin: 0.8rem 0 1rem;
+    padding: 0.65rem 0.9rem;
+    border: 2px solid #f1d25a;
+    border-radius: 8px;
+    background: #2a2210;
+    color: #fff3b8;
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  @media (max-width: 960px) {
+    .wiki-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .wiki-sidebar {
+      position: static;
+    }
+  }
+</style>
+
+<main class="wiki-plain" aria-label="LMG Player's Guide (wiki)">
+  <h1 class="wiki-page-title">LMG Player's Guide (wiki)</h1>
+
+  {{#if wiki.docs}}
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar">
+      <h2>Contents</h2>
+      <nav aria-label="Wiki document list">
+        <ul>
+          {{#each wikiNavDocs}}
+          <li><a href="{{url}}" {{#if isCurrent}}aria-current="page"{{/if}}>{{title}}</a></li>
+          {{/each}}
+        </ul>
+      </nav>
+    </aside>
+
+    <section class="wiki-content">
+      {{#if currentWikiDoc}}
+      <article id="wiki-{{currentWikiDoc.slug}}" class="wiki-doc">
+        <h2>{{currentWikiDoc.title}}</h2>
+        <div class="wiki-markdown">{{{currentWikiDoc.html}}}</div>
+      </article>
+      {{else}}
+      <p class="wiki-empty">No wiki documents found yet in src/wiki.</p>
+      {{/if}}
+    </section>
+  </div>
+  {{else}}
+  <p class="wiki-empty">No wiki documents found yet in src/wiki.</p>
+  {{/if}}
+</main>
+
+{{>footer}}

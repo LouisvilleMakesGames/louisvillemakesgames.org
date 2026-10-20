@@ -1,0 +1,26 @@
+<section class="lgh-homepage-takeover py-5" style="background-image: linear-gradient(rgba(24, 16, 10, 0.82), rgba(24, 16, 10, 0.82)), url('{{takeover.backgroundImagePath}}');">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-12 col-lg-7 text-start">
+        <h1 class="visually-hidden">{{takeover.title}}</h1>
+        <img class="lgh-takeover-logo mb-3" src="{{takeover.logoPath}}" alt="Local Game Harvest logo">
+        <p class="lgh-takeover-subtitle mb-3">{{takeover.subtitle}}</p>
+        <p class="lgh-takeover-meta mb-1">{{takeover.dateLine}}</p>
+        <p class="lgh-takeover-meta mb-0">{{takeover.locationLine}}</p>
+      </div>
+      <div class="col-12 col-lg-5">
+        <div class="lgh-takeover-card">
+          <a class="btn lgh-takeover-btn lgh-clean-btn w-100" href="{{takeover.ctaUrl}}">{{takeover.ctaLabel}}</a>
+          <div class="lgh-rsvp-row mt-3">
+            {{#if takeover.meetupRsvpUrl}}
+            <a class="btn lgh-takeover-btn lgh-clean-btn" href="{{takeover.meetupRsvpUrl}}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-meetup lgh-icon-meetup" aria-hidden="true"></i> RSVP on Meetup</a>
+            {{/if}}
+            {{#if takeover.facebookRsvpUrl}}
+            <a class="btn lgh-takeover-btn lgh-clean-btn" href="{{takeover.facebookRsvpUrl}}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook lgh-icon-facebook" aria-hidden="true"></i> RSVP on Facebook</a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

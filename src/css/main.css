@@ -98,6 +98,98 @@ a:hover {
   margin: 0 8px;
 }
 
+.lgh-homepage-takeover {
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid #fdb825;
+}
+
+.lgh-takeover-logo {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: 0;
+}
+
+.lgh-takeover-subtitle {
+  color: #fdb825;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lgh-takeover-meta {
+  color: #f5f5f5;
+  font-size: 1.1rem;
+}
+
+.lgh-takeover-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(253, 184, 37, 0.7);
+  padding: 24px;
+}
+
+.lgh-takeover-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  padding: 11px 14px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.lgh-clean-btn {
+  background: transparent !important;
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+  box-shadow: none;
+  border-radius: 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  min-height: 50px;
+}
+
+.lgh-clean-btn:hover,
+.lgh-clean-btn:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.lgh-rsvp-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.lgh-rsvp-row .lgh-clean-btn {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.lgh-icon-meetup {
+  color: #f64060;
+  margin-right: 10px;
+  font-size: 2em;
+}
+
+.lgh-icon-facebook {
+  color: #1877f2;
+  margin-right: 10px;
+  font-size: 2em;
+}
+
+@media (max-width: 767.98px) {
+  .lgh-rsvp-row {
+    flex-direction: column;
+  }
+}
+
 
 main.container {
   margin-top: 150px !important;
@@ -498,5 +590,30 @@ p {
   }
 .tl-slidenav-title{
   color: white !important;
+}
+
+.wiki-doc-nav {
+  position: sticky;
+  top: 1rem;
+}
+
+.wiki-markdown h1,
+.wiki-markdown h2,
+.wiki-markdown h3,
+.wiki-markdown h4,
+.wiki-markdown h5,
+.wiki-markdown h6 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.wiki-markdown p,
+.wiki-markdown ul,
+.wiki-markdown ol {
+  margin-bottom: 0.8rem;
+}
+
+.wiki-markdown code {
+  color: #ffd974;
 }
   

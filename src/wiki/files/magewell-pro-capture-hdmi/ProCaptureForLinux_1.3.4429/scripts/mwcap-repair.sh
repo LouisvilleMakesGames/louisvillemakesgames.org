@@ -1,0 +1,433 @@
+#!/bin/sh
+
+LOGFILE=mwcap_install.log
+
+if [ -h $0 ]; then
+    SCRIPT_PATH=`readlink $0 | xargs dirname`
+else
+    SCRIPT_PATH="$(cd "$(dirname "$0")" && pwd)"
+fi
+PROCAPTURE_TOP_DIR=$SCRIPT_PATH/..
+SRC_DIR=$PROCAPTURE_TOP_DIR/src
+MODULE_NAME=ProCapture
+MODULE_INSTALL_DIR=/usr/local/share/ProCapture
+
+MODULE_BUILD_DIR="`pwd`/mwcap_build"
+MODULE_SECURE_NAME=MWMOK
+SECURE_REBOOT_REQUIRED=0
+SIGN_MODULE=/lib/modules/$(uname -r)/build/scripts/sign-file
+MOK_DIR=/usr/local/share/MWMOK
+MOK_DER_FILE=$MOK_DIR/$MODULE_SECURE_NAME.der
+MOK_PRIV_FILE=$MOK_DIR/$MODULE_SECURE_NAME.priv
+
+echo_string ()
+{
+    echo "$1" | tee -a $LOGFILE
+}
+
+echo_string_nonewline ()
+{
+    echo -n "$1" | tee -a $LOGFILE
+}
+
+error_exit ()
+{
+    echo ""
+    echo "Please check $LOGFILE for more details."
+    echo "If you are experiencing difficulty with this installation"
+    echo "please contact support@magewell.net"
+    exit 1
+}
+
+secure_error_exit ()
+{
+    echo ""
+    echo "ERROR: There was an issue adding the digital signature. Please try again later."
+    echo "If you are experiencing difficulty with this installation"
+    echo "please contact support@magewell.net"
+    exit 1
+}
+
+is_secure_boot_enabled() {
+    if [ -d /sys/firmware/efi ]; then
+        secure_boot_status=$(mokutil --sb-state 2>/dev/null | grep -i "SecureBoot enabled")
+        if [ -n "$secure_boot_status" ]; then
+            return 0
+        fi
+    fi
+    return 1
+}
+
+reboot_to_MOK_manager() {
+    echo_string "A new MOK has been successfully imported."
+    echo_string "The system will now reboot and enter the MOK management interface, where you should select 'Enroll MOK' to complete the installation."
+    echo_string_nonewline "Would you like to reboot now to complete the installation process? Press Y to reboot, or type 'N' to cancel[Y]: "
+    read cont
+
+    if [ "$cont" = "NO" -o "$cont" = "no" -o \
+         "$cont" = "N" -o "$cont" = "n" ]; then
+        echo_string "Installation has been canceled. Please remember to restart your computer to access the MOK management interface and select 'Enroll MOK' to complete the process."
+    else
+        reboot
+    fi
+    exit 0
+}
+
+manage_keys() {
+    echo "Your system is running with Secure Boot enabled."
+
+    if [ -f "$MOK_DER_FILE" ] && [ -f "$MOK_PRIV_FILE" ]; then
+        mokutil --import $MOK_DER_FILE
+        OUTPUT=$(mokutil --import $MOK_DER_FILE 2>&1)
+        RET=$?
+
+        if echo "$OUTPUT" | grep -q "already enrolled"; then
+            echo "Certificate is already exists continue install"
+            return 0
+        elif [ $RET -eq 0 ]; then
+            SECURE_REBOOT_REQUIRED=1
+            return 0
+        else
+            echo "Certificate import failed with error: $OUTPUT"
+            secure_error_exit
+        fi
+    fi
+
+    while true; do
+        echo "Please choose an option:"
+        echo "1. Specify an existing key for module signing"
+        echo "2. Automatically generate and enroll a new key"
+        read -p "Enter your choice [1-2, default is 2]: " choice
+
+        choice=${choice:-2}
+
+        case $choice in
+            1)
+                read -p "Enter the path to your private key: " key_path
+                read -p "Enter the path to your certificate: " cert_path
+                echo "Signing modules with specified key: $key_path"
+                if [ -f "$key_path" ] && [ -f "$cert_path" ]; then
+                    mokutil --import "$cert_path"
+                    OUTPUT=$(mokutil --import "$cert_path" 2>&1)
+                    RET=$?
+
+                    if echo "$OUTPUT" | grep -q "already enrolled"; then
+                        echo "Certificate is already enrolled."
+                    elif [ $RET -eq 0 ]; then
+                        SECURE_REBOOT_REQUIRED=1
+                    else
+                        echo "Certificate import failed with error: $OUTPUT"
+                    fi
+
+                    MOK_DER_FILE=$cert_path
+                    MOK_PRIV_FILE=$key_path
+
+                else
+                    echo "Invalid path(s). Please ensure all paths are correct and install again."
+                    secure_error_exit
+                fi
+                break
+                ;;
+            2)
+                echo "Generating and enrolling a new key..."
+                if [ ! -d "$MOK_DIR" ]; then
+                    mkdir -p "$MOK_DIR" >> "$LOGFILE" 2>&1
+                fi
+                RET=$?
+                if [ $RET -ne 0 ] ; then
+                    echo_string ""
+                    echo_string "ERROR: Failed to create directory $MOK_DIR !"
+                    secure_error_exit
+                fi
+
+                openssl req -new -x509 -newkey rsa:2048 -keyout "$MOK_DIR/$MODULE_SECURE_NAME.priv" -outform DER -out "$MOK_DIR/$MODULE_SECURE_NAME.der" -nodes -days 36500 -subj "/CN=MW Module Key/"
+                mokutil --import "$MOK_DIR/$MODULE_SECURE_NAME.der"
+                RET=$?
+                if [ $RET -eq 0 ]; then
+                    SECURE_REBOOT_REQUIRED=1
+                else
+                    secure_error_exit
+                fi
+                break
+                ;;
+        esac
+    done
+    return 0
+}
+
+build_prepare ()
+{
+    if is_secure_boot_enabled; then
+        manage_keys
+        RET=$?
+        if [ $RET -ne 0 ] ; then
+            secure_error_exit
+        fi
+    fi
+
+    if [ -d $MODULE_BUILD_DIR ]; then
+        echo_string "Build directory: $MODULE_BUILD_DIR already exists."
+        echo_string "Do you wish to remove $MODULE_BUILD_DIR (Y/N) [N]: "
+        read cont
+
+        if [ "$cont" != "YES" -a "$cont" != "yes" -a \
+            "$cont" != "Y" -a "$cont" != "y" ] ; then
+            echo
+            echo "Cancelling installation, $MODULE_BUILD_DIR unmodified."
+            exit
+        fi
+
+        echo_string_nonewline "Removing directory $MODULE_BUILD_DIR ... "
+        rm -rvf $MODULE_BUILD_DIR >> $LOGFILE 2>&1
+        RET=$?
+        if [ $RET -ne 0 ]; then
+            echo_string "ERROR: Failed to remove directory:"
+            echo_string "   $MODULE_BUILD_DIR"
+            echo_string "You should remove it manually."
+            error_exit
+        fi
+        echo_string "Done."
+    fi
+
+    echo_string_nonewline "Creating build directory $MODULE_BUILD_DIR ... "
+    mkdir -p $MODULE_BUILD_DIR >> $LOGFILE 2>&1
+    RET=$?
+    if [ $RET -ne 0 ]; then
+        echo_string ""
+        echo_string "ERROR: Failed to create build directory $MODULE_BUILD_DIR"
+        error_exit
+    fi
+    echo_string "Done."
+
+    echo_string_nonewline "Copying driver source into $MODULE_BUILD_DIR ... "
+    cp -avf $SRC_DIR/. $MODULE_BUILD_DIR >> $LOGFILE 2>&1
+    RET=$?
+    if [ $RET -ne 0 ]; then
+        echo_string ""
+        echo_string "ERROR: Failed to copy driver source into $MODULE_BUILD_DIR"
+        error_exit
+    fi
+    echo_string "Done."
+}
+
+build_clean ()
+{
+    clean_module
+    if [ -d $MODULE_BUILD_DIR ]; then
+        echo_string_nonewline "Removing build directory $MODULE_BUILD_DIR ... "
+        rm -rvf $MODULE_BUILD_DIR >> $LOGFILE 2>&1
+        RET=$?
+        if [ $RET -ne 0 ]; then
+            echo_string "Warning: Failed to remove build directory:"
+            echo_string "   $MODULE_BUILD_DIR"
+            echo_string "You should remove it manually."
+        fi
+        echo_string "Done."
+    fi
+}
+
+clean_module ()
+{
+    echo_string_nonewline "Cleaning module ... "
+    if [ -d $MODULE_BUILD_DIR ]; then
+        make -C $MODULE_BUILD_DIR clean >> $LOGFILE 2>&1
+    fi
+    echo_string "Done."
+}
+
+build_module ()
+{
+    echo_string_nonewline "Building module for kernel `uname -r` ... "
+    make -C $MODULE_BUILD_DIR -j4 >> $LOGFILE 2>&1
+    RET=$?
+    if [ $RET -ne 0 ] ; then
+        echo_string ""
+        echo_string "ERROR: Failed to build module!"
+        error_exit
+    fi
+
+    if is_secure_boot_enabled; then
+        if [ -f "$MOK_DER_FILE" ] && [ -f "$MOK_PRIV_FILE" ] && [ -f "$MODULE_BUILD_DIR/$MODULE_NAME.ko" ]; then
+            echo "Signing modules with specified key: $MOK_PRIV_FILE and certificate: $MOK_DER_FILE"
+            $SIGN_MODULE sha256 "$MOK_PRIV_FILE" "$MOK_DER_FILE" "$MODULE_BUILD_DIR/$MODULE_NAME.ko"
+            RET=$?
+            if [ $RET -ne 0 ] ; then
+                echo_string ""
+                echo_string "ERROR: Failed to sign module!"
+                secure_error_exit
+            fi
+            echo "Module signed successfully."
+        else
+            echo "Invalid path(s). Please ensure all paths are correct,and install again"
+            secure_error_exit
+        fi
+    else
+        echo "Secure Boot is not enabled on your system. Proceeding with installation..."
+    fi
+
+    echo_string "Done."
+}
+
+install_module ()
+{
+    echo_string_nonewline "Installing module ... "
+    make -C $MODULE_BUILD_DIR install -j4 >> $LOGFILE 2>&1
+    RET=$?
+    if [ $RET -ne 0 ] ; then
+        echo_string ""
+        echo_string "ERROR: Failed to install module!"
+        error_exit
+    fi
+
+    if [ -d /etc/udev/rules.d ]; then
+        cp -vf $MODULE_INSTALL_DIR/scripts/10-procatpure-event-dev.rules /etc/udev/rules.d/ >> $LOGFILE 2>&1
+    fi
+
+    $DEPMOD -a
+    RET=$?
+    if [ $RET -ne 0 ] ; then
+        echo_string ""
+        echo_string "ERROR: Failed to run $DEPMOD !"
+        error_exit
+    fi
+    echo_string "Done."
+
+    if [ -d /etc/modprobe.d ] ; then
+        echo_string_nonewline "Installing ProCapture.conf into /etc/modprobe.d/... "
+        cp -vf $SCRIPT_PATH/ProCapture.conf /etc/modprobe.d/ >> $LOGFILE 2>&1
+        echo_string "Done."
+    else
+        echo_string "Skip installation of ProCapture.conf!"
+    fi
+}
+
+SECOND=""
+while getopts "s" flag ; do
+   case "$flag" in
+      s)SECOND="YES";;
+   esac
+done
+
+if [ "YES" != "$SECOND" ] ; then
+echo "==================================================="
+echo "      Magewell ProCapture Linux Driver Repair"
+echo "==================================================="
+echo ""
+fi
+
+if [ `id -u` -ne 0 ] ; then
+    sudo su -c "$0 -s $*"
+    exit $?
+fi
+
+echo -n "" > $LOGFILE
+
+echo_string_nonewline "Checking for required tools ... "
+MISSING_TOOLS=""
+REQUIRED_TOOLS="make gcc ld"
+for tool in $REQUIRED_TOOLS ; do
+    $tool --help > /dev/null 2>&1
+    RET=$?
+    if [ $RET -ne 0 ] ; then
+        MISSING_TOOLS="$MISSING_TOOLS $tool"
+    fi
+done
+
+if [ -n "$MISSING_TOOLS" ]; then
+    echo_string ""
+    echo_string ""
+    echo_string "Your system has one or more system tools missing which are"
+    echo_string "required to compile and load the ProCapture Linux driver."
+    echo_string ""
+    echo_string "Required tools: $MISSING_TOOLS"
+    error_exit
+else
+    echo_string "Done."
+fi
+
+
+echo_string_nonewline "Checking for required packages ... "
+KERNEL_BASE="/lib/modules/`uname -r`"
+KERNEL_BUILD="$KERNEL_BASE/build"
+if [ ! -d $KERNEL_BUILD ]; then
+    echo_string ""
+    echo_string ""
+    echo_string "Your system is missing kernel development packages which"
+    echo_string "is required to build and load the ProCapture Linux driver."
+    echo_string ""
+    echo_string "Required packages: kernel-devel"
+    echo_string ""
+    echo_string "Please make sure that the correct versions of these packages are"
+    echo_string "installed.  Versions required: `uname -r`"
+    error_exit
+else
+    echo_string "Done."
+fi
+
+
+echo_string "Beginning repair, please wait... "
+
+DEPMOD=`which depmod 2>/dev/null`
+if [ ! -e "$DEPMOD" ]; then
+    echo_string ""
+    echo_string "ERROR: Failed to find command: depmod"
+    echo_string "   Please install depmod first!"
+    echo_string ""
+    error_exit
+fi
+
+build_prepare
+build_module
+install_module
+build_clean
+
+if [ $SECURE_REBOOT_REQUIRED -eq 1 ]; then
+    reboot_to_MOK_manager
+fi
+
+MODULE_LOADED=`lsmod | grep ProCapture`
+if [ -z "$MODULE_LOADED" ]; then
+    MODPROBE=`which modprobe 2>/dev/null`
+    if [ ! -e "$MODPROBE" ]; then
+        echo_string "modprobe is not detected! Please load driver module manually!"
+    else
+        $MODPROBE ProCapture
+        RET=$?
+        if [ $RET -ne 0 ] ; then
+            echo_string "ERROR: Load driver module failed!"
+            error_exit
+        fi
+    fi
+    echo_string ""
+    echo_string "========================================================"
+    echo_string ""
+    echo_string "Repair Successfully!"
+    echo_string "For more information please check the docs directory or"
+    echo_string "contact support@magewell.net."
+    echo_string ""
+    echo_string "========================================================"
+else
+    echo_string ""
+    echo_string "========================================================"
+    echo_string ""
+    echo_string "Repair Successfully!"
+    echo_string "For more information please check the docs directory or"
+    echo_string "contact support@magewell.net."
+    echo_string ""
+    echo_string "!!!Previous installed module already loaded, reboot is needed! "
+    echo_string_nonewline "Do you wish to reboot now (Y/N) [Y]: "
+    read cont
+
+    if [ "$cont" = "NO" -o "$cont" = "no" -o \
+         "$cont" = "N" -o "$cont" = "n" ]; then
+        echo_string "Reboot canceled! You should reboot your system manually later."
+    else
+        reboot
+    fi
+
+    echo_string ""
+    echo_string "========================================================"
+fi
+
+echo_string ""
+

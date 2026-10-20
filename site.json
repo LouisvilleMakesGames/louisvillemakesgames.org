@@ -5,9 +5,9 @@
   "google-analytics-id": "",
   "campaigns": {
     "giveForGood": {
-      "enabled": true,
+      "enabled": false,
       "headerBannerEnabled": true,
-      "homepageTakeoverEnabled": true,
+      "giveForGoodAnnualFundraiserWeekHomepageTakeoverEnabled": false,
       "donateNavHighlight": true,
       "redirectDonateToHome": true,
       "donateUrl": "https://www.giveforgoodlouisville.org/donate/Louisville-Makes-Games",
@@ -41,13 +41,36 @@
       ],
       "ctaSub": "Give for Good Louisville is going on NOW!",
       "ctaMain": "Donate Now!"
+    },
+    "local-game-harvest-takeover": {
+      "enabled": true,
+      "title": "Local Game Harvest 2026",
+      "subtitle": "Family friendly - play games made by local creators",
+      "dateLine": "Sat, 7 Nov 2026 • 6:00 PM to 11:00 PM",
+      "locationLine": "The Historic Broadway Theater - 816 E Broadway, KY 40204-1053",
+      "logoPath": "img/logos/local-game-harvest/local-game-harvest-for-dark-bg-md.png",
+      "backgroundImagePath": "img/Local Game Harvest mock 2.png",
+      "ctaLabel": "Find out more",
+      "ctaUrl": "/local-game-harvest-2026",
+      "meetupRsvpUrl": "https://www.meetup.com/louisvillemakesgames/events/316892073/",
+      "facebookRsvpUrl": "https://www.facebook.com/events/1583140433501095"
     }
   },
   "pages":[
     {
-      "name": "GIVE FOR GOOD",
+      "name": "Home",
       "file": "index.html",
       "showInNav": true
+    },
+    {
+      "name": "GIVE FOR GOOD",
+      "file": "index.html",
+      "showInNav": false
+    },
+      {
+      "name": "Local Game Harvest-2026",
+      "file": "local-game-harvest-2026.html",
+      "showInNav": false
     },
       {
       "name": "Local Game Harvest-2025",
@@ -128,6 +151,11 @@
     {
       "name": "getjammin",
       "file": "getjammin.html",
+      "showInNav": false
+    },
+    {
+      "name": "Wiki",
+      "file": "wiki.html",
       "showInNav": false
     }
   ]

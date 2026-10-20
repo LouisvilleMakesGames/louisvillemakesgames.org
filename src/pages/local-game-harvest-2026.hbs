@@ -1,0 +1,131 @@
+{{>header}}
+
+<main class="container my-5">
+  <section class="lgh-2026-hero">
+    <div class="banner-container position-relative">
+      <img src="img/Local Game Harvest mock 2.png" alt="Local Game Harvest Banner" class="img-fluid banner-image">
+      <div class="overlay-content w-100">
+        <img src="img/logos/local-game-harvest/local-game-harvest-for-dark-bg-md.png" alt="Local Game Harvest Logo" class="event-logo mb-4">
+        <strong class="display-5">{{local-game-harvest-2026.event.dateLine}}</strong>
+        <h2 class="mt-3 mb-2">{{local-game-harvest-2026.event.venue}}</h2>
+        <p class="event-address mb-3">{{local-game-harvest-2026.event.address}}</p>
+        <p class="event-badge mb-4">{{local-game-harvest-2026.event.audience}}</p>
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+          <a href="https://www.meetup.com/louisvillemakesgames/events/316892073/" target="_blank" rel="noopener noreferrer" class="btn btn-fall btn-lg">RSVP on Meetup</a>
+          <a href="https://www.facebook.com/events/1583140433501095" target="_blank" rel="noopener noreferrer" class="btn btn-fall btn-lg">RSVP on Facebook</a>
+        </div>
+        <div class="event-blurb mt-4 text-start mx-auto">
+          {{#each local-game-harvest-2026.event.blurbParagraphs}}
+            {{#if @first}}
+            <h3 class="event-blurb-title">{{this}}</h3>
+            {{else}}
+            <p>{{this}}</p>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-5 text-center">
+    <h1>Local Game Harvest 2026</h1>
+    <p class="lead">Games lineup coming soon.</p>
+  </section>
+</main>
+
+{{>footer}}
+
+<style>
+  .lgh-2026-hero .banner-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+  }
+
+  .lgh-2026-hero .banner-image {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    display: block;
+    grid-area: 1 / 1;
+  }
+
+  .lgh-2026-hero .overlay-content {
+    grid-area: 1 / 1;
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+  }
+
+  .lgh-2026-hero .event-logo {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .lgh-2026-hero .event-address {
+    font-size: 1.2rem;
+  }
+
+  .lgh-2026-hero .event-badge {
+    color: #fdb825;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+  }
+
+  .lgh-2026-hero .event-blurb {
+    max-width: 860px;
+  }
+
+  .lgh-2026-hero .event-blurb-title {
+    color: #fdb825;
+    margin-bottom: 12px;
+    transform: none;
+    background: none;
+    padding: 0;
+    width: auto;
+  }
+
+  .lgh-2026-hero .event-blurb p {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .lgh-2026-hero .btn-fall {
+    background-color: transparent;
+    border: 1.5px solid #fff;
+    color: #fff;
+    text-align: center;
+    min-width: 260px;
+  }
+
+  .lgh-2026-hero .btn-fall:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .lgh-2026-hero .overlay-content {
+      padding: 20px;
+    }
+
+    .lgh-2026-hero .event-logo {
+      max-width: 300px;
+    }
+
+    .lgh-2026-hero .event-address {
+      font-size: 1rem;
+    }
+  }
+</style>

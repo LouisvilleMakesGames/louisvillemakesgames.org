@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMG Events Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-shader" aria-hidden="true"></canvas>
+    <main class="screen">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="label">Louisville Makes Games</p>
+          <h1>Upcoming Events</h1>
+        </div>
+        <div class="topbar-right">
+          <p id="date-display" class="date-display"></p>
+          <aside class="refresh-countdown" aria-live="polite">
+            <p class="countdown-label">Refresh In</p>
+            <p id="refresh-countdown-value" class="countdown-value">05:00</p>
+          </aside>
+        </div>
+      </header>
+
+      <section id="metro-grid" class="metro-grid" aria-live="polite"></section>
+    </main>
+
+    <template id="event-tile-template">
+      <article class="event-tile">
+        <div class="event-media"></div>
+        <div class="event-copy">
+          <h3 class="event-title"></h3>
+          <p class="event-time"></p>
+          <p class="event-location"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

@@ -8,7 +8,7 @@
 <h3>Local Games! – Gotta buy 'em all!</h3>
   <div class="row">
     {{#each games}}
-    {{#if show}}{{#if complete}}
+    {{#if show}}
       <div class="col-md-4">
         <div class="card game-card bg-dark text-white">
           <div class="card-img-container">
@@ -28,39 +28,22 @@
           </div>
         </div>
       </div>
-       {{/if}}{{/if}}
-    {{/each}}
-  </div>
-
-  <h2>Games currently in development</h2>
-
-  <p>Check our <a href="https://www.meetup.com/LouisvilleMakesGames/" target="_blank">meet up events</a> for the next playtest night and try these local games before they are released!</p>
-
-  <div class="row">
-    {{#each games}}
-    {{#if wip}}
-      <div class="col-md-4">
-        <div class="card game-card bg-dark text-white">
-          <div class="card-img-container">
-          <a href="{{link}}" target="_blank" >
-            <img class="card-img-top" src="{{image}}" alt="{{name}}">
-            </a>
-          </div>
-          <div class="card-body">
-            <h5 class="card-price">{{price}}</h5>
-            <h5 class="card-title">{{name}}</h5>
-            
-            <p class="card-text">In Development since {{started}}</p>
-           
-            <p class="card-text">By {{creator}}</p>
-            <p class="card-text">{{pitch}}</p>
-            {{!-- <a href="{{link}}" target="_blank" class="btn btn-primary">Play Now</a> --}}
-          </div>
-        </div>
-      </div>
        {{/if}}
     {{/each}}
   </div>
+
+<h3> Full listing of local games</h3>
+<p>Some thumbnails recently dissapeared because of a change to the Global Game Jam website, we could use a volunteer to download all the missing thumbs and double check game links!</p>
+ {{#each games}}
+   
+          <a class="count-me" href="{{link}}" target="_blank" >{{name}}</a></br>
+   
+    {{/each}}
+ 
+
+  <p>Check our <a href="https://www.meetup.com/LouisvilleMakesGames/" target="_blank">meet up events</a> for the next playtest night and try these local games before they are released!</p>
+
+
 
 </div>
 
@@ -68,7 +51,7 @@
 
 <!-- JavaScript code for counting game cards and displaying the count in the above div -->
 <script>
-  const gameCards = document.querySelectorAll('.game-card');
+  const gameCards = document.querySelectorAll('.count-me');
   const gameCountDiv = document.getElementById('gameCount');
   gameCountDiv.innerText = gameCards.length;
 </script>

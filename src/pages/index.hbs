@@ -1,11 +1,17 @@
 
 {{>header}}
 
+{{#with (lookup site.campaigns "local-game-harvest-takeover") as |lghTakeover|}}
+{{#if lghTakeover.enabled}}
+{{> lgh-takeover takeover=lghTakeover}}
+{{else}}
 {{#if site.campaigns.giveForGood.enabled}}
 {{#if site.campaigns.giveForGood.homepageTakeoverEnabled}}
 {{> g4g}}
 {{/if}}
 {{/if}}
+{{/if}}
+{{/with}}
 
 <main class="container my-5">
 

@@ -3,6 +3,8 @@ var path = require("path");
 
 var handlebars = require("handlebars");
 var copydir = require("copy-dir");
+var MarkdownIt = require("markdown-it");
+var markdownItHighlightjs = require("markdown-it-highlightjs");
 var config = require("./config.json");
 var site = require("./site.json");
 var src = "./" + config.src;
@@ -32,6 +34,17 @@ if (fs.existsSync("./musicjam")) {
   copydir.sync("./musicjam", path.join(dest, "musicjam"));
 }
 
+if (fs.existsSync(path.join(src, "events-feed"))) {
+  makeDirIfNotExist(path.join(dest, "events"));
+  copydir.sync(path.join(src, "events-feed"), path.join(dest, "events"));
+}
+
+var wikiFilesSrc = path.join(src, "wiki", "files");
+if (fs.existsSync(wikiFilesSrc)) {
+  makeDirIfNotExist(path.join(dest, "wiki", "files"));
+  copydir.sync(wikiFilesSrc, path.join(dest, "wiki", "files"));
+}
+
 
 let data = {};
 data.site = site;
@@ -39,6 +52,8 @@ addPageData(data);
 
 function addPageData(data) {
   var newData = data;
+  newData.wiki = loadWikiData();
+
   var g4gSchedulePath = path.join(src, "pages", "g4g-stream-schedule.json");
   if (fs.existsSync(g4gSchedulePath)) {
     newData.g4gStreamSchedule = require("./" + g4gSchedulePath);
@@ -124,6 +139,8 @@ data.site.pages.forEach((page) => {
   }
 });
 
+createWikiDocPages(data);
+
 
 function insertPartials(templateName) {
   var completeTemplate = fs.readFileSync(path.join(src, config.templatesDirectory, templateName + ".hbs"), "utf8");
@@ -147,7 +164,7 @@ function insertPartials(templateName) {
 }
 
 
-function createPage(templateName, data, outputFileName, pageMeta) {
+function createPage(templateName, data, outputFileName, pageMeta, pageDataOverrides) {
   var giveForGoodCampaign = data.site && data.site.campaigns && data.site.campaigns.giveForGood
     ? data.site.campaigns.giveForGood
     : null;
@@ -181,10 +198,33 @@ function createPage(templateName, data, outputFileName, pageMeta) {
     return;
   }
 
-  var renderData = Object.assign({}, data);
+  var renderData = Object.assign({}, data, pageDataOverrides || {});
+
+  if (templateName === "wiki" && renderData.wiki && Array.isArray(renderData.wiki.docs) && renderData.wiki.docs.length > 0) {
+    var selectedSlug = renderData.currentWikiDoc && renderData.currentWikiDoc.slug
+      ? renderData.currentWikiDoc.slug
+      : null;
+
+    var selectedDoc = selectedSlug
+      ? renderData.wiki.docs.find(function(doc) { return doc.slug === selectedSlug; })
+      : null;
+
+    if (!selectedDoc) {
+      selectedDoc = renderData.wiki.docs.find(function(doc) { return doc.isIndex; }) || renderData.wiki.docs[0];
+    }
+
+    renderData.currentWikiDoc = selectedDoc || null;
+    renderData.wikiNavDocs = renderData.wiki.docs.map(function(doc) {
+      return Object.assign({}, doc, {
+        isCurrent: !!selectedDoc && doc.slug === selectedDoc.slug
+      });
+    });
+  }
+
   renderData.currentPage = {
     slug: templateName,
     isHome: templateName === "index",
+    prettyUrl: pageMeta && pageMeta.prettyUrl ? pageMeta.prettyUrl : toPrettyUrl(pageMeta && pageMeta.file ? pageMeta.file : ""),
     file: pageMeta && pageMeta.file ? pageMeta.file : "",
     name: pageMeta && pageMeta.name ? pageMeta.name : ""
   };
@@ -215,6 +255,80 @@ function makeDirIfNotExist(filePath) {
   if (!fs.existsSync(filePath)){
     fs.mkdirSync(filePath, { recursive: true });
   }
+}
+
+function loadWikiData() {
+  var wikiDir = path.join(src, "wiki");
+  var markdown = new MarkdownIt({
+    html: true,
+    linkify: true,
+    typographer: true
+  });
+  markdown.use(markdownItHighlightjs, {
+    auto: false,
+    code: true
+  });
+
+  if (!fs.existsSync(wikiDir)) {
+    return {
+      docs: []
+    };
+  }
+
+  var docs = fs.readdirSync(wikiDir)
+    .filter(function(fileName) {
+      return fileName.toLowerCase().endsWith(".md");
+    })
+    .sort(function(a, b) {
+      return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+    })
+    .map(function(fileName) {
+      var raw = fs.readFileSync(path.join(wikiDir, fileName), "utf8");
+      var slug = fileName.replace(/\.md$/i, "").replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-+|-+$/g, "").toLowerCase();
+      var titleMatch = raw.match(/^#\s+(.+)$/m);
+      var title = titleMatch ? titleMatch[1].trim() : fileName.replace(/\.md$/i, "");
+      var isIndex = fileName.toLowerCase() === "index.md";
+
+      return {
+        fileName: fileName,
+        slug: slug,
+        isIndex: isIndex,
+        url: isIndex ? "/wiki" : "/wiki/" + slug,
+        title: title,
+        html: markdown.render(raw)
+      };
+    });
+
+  return {
+    docs: docs
+  };
+}
+
+function createWikiDocPages(data) {
+  if (!data.wiki || !Array.isArray(data.wiki.docs) || data.wiki.docs.length === 0) {
+    return;
+  }
+
+  data.wiki.docs.forEach(function(doc) {
+    if (doc.isIndex) {
+      return;
+    }
+
+    var outputFileName = path.join(dest, "wiki", doc.slug, "index.html");
+    createPage(
+      "wiki",
+      data,
+      outputFileName,
+      {
+        file: "wiki.html",
+        name: doc.title,
+        prettyUrl: doc.url
+      },
+      {
+        currentWikiDoc: doc
+      }
+    );
+  });
 }
 
 function toPrettyUrl(fileName) {
