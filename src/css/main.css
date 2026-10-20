@@ -185,6 +185,10 @@ a:hover {
 }
 
 @media (max-width: 767.98px) {
+  .lgh-takeover-subtitle {
+    white-space: normal;
+  }
+
   .lgh-rsvp-row {
     flex-direction: column;
   }
