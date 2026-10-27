@@ -83,6 +83,11 @@
       "showInNav": false
     },
     {
+      "name": "Local Game Harvest Redirect",
+      "file": "lgh.html",
+      "showInNav": false
+    },
+    {
       "name": "Blog",
       "file": "blog.html",
       "showInNav": true

@@ -6,6 +6,7 @@
       <img src="img/Local Game Harvest mock 2.png" alt="Local Game Harvest Banner" class="img-fluid banner-image">
       <div class="overlay-content w-100">
         <img src="img/logos/local-game-harvest/local-game-harvest-for-dark-bg-md.png" alt="Local Game Harvest Logo" class="event-logo mb-4">
+        <p id="lgh-flavor-text" class="lgh-flavor-text" data-target-date-et="2026-11-07">ONLY -- DAYS UNTIL GAME HARVEST!</p>
         <strong class="display-5">{{local-game-harvest-2026.event.dateLine}}</strong>
         <h2 class="mt-3 mb-2">{{local-game-harvest-2026.event.venue}}</h2>
         <p class="event-address mb-3">{{local-game-harvest-2026.event.address}}</p>
@@ -28,12 +29,112 @@
   </section>
 
   <section class="mt-5 text-center">
-    <h1>Local Game Harvest 2026</h1>
-    <p class="lead">Games lineup coming soon.</p>
+    <p class="lead">Play local games made by nearby creators.</p>
   </section>
+
+  <section class="lgh-2026-games mt-4">
+    <div class="lgh-games-grid">
+      {{#each local-game-harvest-2026.lgh}}
+      <article class="lgh-game-card">
+        <div class="lgh-game-slideshow" data-slideshow>
+          {{#each screenshots}}
+          <img src="{{this}}" alt="{{../title}} screenshot {{@index}}" class="lgh-game-slide">
+          {{/each}}
+        </div>
+        <h3 class="lgh-game-title">{{title}}</h3>
+        <p class="lgh-game-creator">{{creator}}</p>
+      </article>
+      {{/each}}
+    </div>
+  </section>
+
+  {{#if local-game-harvest-2026.noScreenshots.length}}
+  <section class="lgh-2026-text-list mt-5">
+    <h2 class="text-center">More Games</h2>
+    <ul class="lgh-no-shot-list">
+      {{#each local-game-harvest-2026.noScreenshots}}
+      <li><strong>{{title}}</strong> - {{creator}}</li>
+      {{/each}}
+    </ul>
+  </section>
+  {{/if}}
 </main>
 
 {{>footer}}
+
+<script>
+  (function () {
+    var BASE_TRANSITION_MS = 4800;
+    var grid = document.querySelector('.lgh-games-grid');
+
+    if (grid) {
+      var cardNodes = Array.prototype.slice.call(grid.querySelectorAll('.lgh-game-card'));
+      for (var i = cardNodes.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = cardNodes[i];
+        cardNodes[i] = cardNodes[j];
+        cardNodes[j] = tmp;
+      }
+      cardNodes.forEach(function (node) {
+        grid.appendChild(node);
+      });
+    }
+
+    var cards = document.querySelectorAll('[data-slideshow]');
+
+    cards.forEach(function (card, cardIndex) {
+      var slides = Array.prototype.slice.call(card.querySelectorAll('.lgh-game-slide'));
+      if (!slides.length) {
+        return;
+      }
+
+      var activeIndex = Math.floor(Math.random() * slides.length);
+      slides[activeIndex].classList.add('is-active');
+
+      if (slides.length < 2) {
+        return;
+      }
+
+      var startDelay = Math.floor(Math.random() * 2200) + (cardIndex * 37);
+      var baseTransitionMs = BASE_TRANSITION_MS + Math.floor(Math.random() * 900) - 450;
+      var intervalId = null;
+      var timeoutId = null;
+
+      function showNextSlide() {
+        var nextIndex = activeIndex;
+        while (nextIndex === activeIndex) {
+          nextIndex = Math.floor(Math.random() * slides.length);
+        }
+
+        slides[activeIndex].classList.remove('is-active');
+        slides[nextIndex].classList.add('is-active');
+        activeIndex = nextIndex;
+      }
+
+      function restartTicker(delayMs) {
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+
+        timeoutId = setTimeout(function () {
+          intervalId = setInterval(showNextSlide, baseTransitionMs);
+        }, delayMs);
+      }
+
+      restartTicker(startDelay);
+
+      card.addEventListener('click', function () {
+        showNextSlide();
+        restartTicker(baseTransitionMs);
+      });
+    });
+  })();
+</script>
+
+<script src="js/lgh-countdown.js" defer></script>
 
 <style>
   .lgh-2026-hero .banner-container {
@@ -73,6 +174,24 @@
 
   .lgh-2026-hero .event-address {
     font-size: 1.2rem;
+  }
+
+  .lgh-2026-hero .lgh-flavor-text {
+    margin: 0 auto 14px;
+    color: #ffde38;
+    font-size: clamp(1rem, 2.5vw, 1.7rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px #000, 2px 2px 0 #000;
+    transform: rotate(-10deg);
+    animation: lghFlavorBounce 1.1s steps(2, end) infinite;
+    width: fit-content;
+  }
+
+  @keyframes lghFlavorBounce {
+    0%, 100% { transform: rotate(-10deg) scale(1); }
+    50% { transform: rotate(-10deg) scale(1.08); }
   }
 
   .lgh-2026-hero .event-badge {
@@ -115,6 +234,95 @@
     color: #fff;
   }
 
+  .lgh-games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    perspective: 1000px;
+  }
+
+  .lgh-game-card {
+    border: 4px solid #edde44;
+    background: #edde44;
+    border-radius: 0;
+    padding: 14px;
+    color: #141924;
+    transform: rotateX(4deg) rotateY(-5deg);
+    transform-origin: center;
+    box-shadow: 10px 12px 0 rgba(0, 0, 0, 0.35);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .lgh-game-card:nth-child(3n + 2) {
+    border-color: #6acad0;
+    background: #6acad0;
+  }
+
+  .lgh-game-card:nth-child(3n) {
+    border-color: #ea3657;
+    background: #ea3657;
+    color: #111;
+  }
+
+  .lgh-game-card:hover {
+    transform: rotateX(0deg) rotateY(0deg) translateY(-3px);
+    box-shadow: 14px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .lgh-game-slideshow {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0;
+    overflow: hidden;
+    background: #090c10;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border: 3px solid rgba(17, 22, 29, 0.65);
+  }
+
+  .lgh-game-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 900ms ease-in-out;
+  }
+
+  .lgh-game-slide.is-active {
+    opacity: 1;
+  }
+
+  .lgh-game-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .lgh-game-creator {
+    margin: 6px 0 0;
+    color: #141924;
+    font-weight: 800;
+  }
+
+  .lgh-game-card:nth-child(3n) .lgh-game-creator {
+    color: #111;
+  }
+
+  .lgh-no-shot-list {
+    max-width: 820px;
+    margin: 14px auto 0;
+    padding-left: 20px;
+  }
+
+  .lgh-no-shot-list li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+
   @media (max-width: 768px) {
     .lgh-2026-hero .overlay-content {
       padding: 20px;
@@ -126,6 +334,23 @@
 
     .lgh-2026-hero .event-address {
       font-size: 1rem;
+    }
+
+    .lgh-games-grid {
+      grid-template-columns: 1fr;
+      perspective: none;
+    }
+
+    .lgh-game-card,
+    .lgh-game-card:hover {
+      transform: none;
+      box-shadow: 8px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1100px) {
+    .lgh-games-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>

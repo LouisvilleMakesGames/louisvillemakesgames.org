@@ -28,6 +28,7 @@
         <p>Feel free to view/use our source code on <a
             href="https://github.com/LouisvilleMakesGames/LouisvilleMakesGames.org" target="_blank"
             rel="noopener">GitHub</a></p>
+        <p id="page-weight" class="mt-2 mb-0 small text-white-50">Page weight: --KB</p>
       </div>
     </div>
   </div>
@@ -49,6 +50,25 @@
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
       element.classList.add(randomColor);
     });
+
+    const weightEl = document.getElementById("page-weight");
+    if (weightEl && window.performance) {
+      const navEntries = performance.getEntriesByType("navigation");
+      const navSize = navEntries.length ? (navEntries[0].transferSize || navEntries[0].encodedBodySize || 0) : 0;
+
+      const resourceSize = performance.getEntriesByType("resource").reduce(function(total, entry) {
+        return total + (entry.transferSize || entry.encodedBodySize || 0);
+      }, 0);
+
+      const totalBytes = navSize + resourceSize;
+      const totalKb = totalBytes / 1024;
+      if (totalKb >= 1024) {
+        const totalMb = totalKb / 1024;
+        weightEl.textContent = "Page weight: " + totalMb.toFixed(2) + "MB";
+      } else {
+        weightEl.textContent = "Page weight: " + totalKb.toFixed(1) + "KB";
+      }
+    }
   });
 </script>
 </html>

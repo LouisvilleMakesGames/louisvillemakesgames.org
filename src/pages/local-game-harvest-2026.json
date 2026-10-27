@@ -15,5 +15,179 @@
       "Come through, play some games, bring a friend, and support local art."
     ]
   },
-  "lgh": []
+  "lgh": [
+    {
+      "title": "Spell",
+      "creator": "Ebenie and Rayya Brown",
+      "description": "Linguistics based digital board game",
+      "screenshots": [
+        "/img/lgh2026/spell/spell-1.png",
+        "/img/lgh2026/spell/spell-2.png",
+        "/img/lgh2026/spell/spell-3.png"
+      ]
+    },
+    {
+      "title": "MEAT MECH DUNGEON",
+      "creator": "TEAM OMEN",
+      "description": "A turn-based DRPG / Dungeon Crawler. Made in two weeks for Mech Jam VII and placed as #1 Overall",
+      "screenshots": [
+        "/img/lgh2026/meat-mech-dungeon/meat-mech-dungeon-1.gif",
+        "/img/lgh2026/meat-mech-dungeon/meat-mech-dungeon-1.png",
+        "/img/lgh2026/meat-mech-dungeon/meat-mech-dungeon-2.png",
+        "/img/lgh2026/meat-mech-dungeon/meat-mech-dungeon-3.png",
+        "/img/lgh2026/meat-mech-dungeon/meat-mech-dungeon-4.png",
+        "/img/lgh2026/meat-mech-dungeon/meat-mech-dungeon-6.png"
+      ]
+    },
+    {
+      "title": "Salvation",
+      "creator": "Iron135",
+      "description": "Fight monsters and demons that have taken over the city.",
+      "screenshots": [
+        "/img/lgh2026/salvation/salvation-1.png",
+        "/img/lgh2026/salvation/salvation-2.png",
+        "/img/lgh2026/salvation/salvation-3.png",
+        "/img/lgh2026/salvation/salvation-4.png"
+      ]
+    },
+    {
+      "title": "Harvest Havoc!",
+      "creator": "Jason Farnsworth",
+      "description": "Help the farmer harvest all year round! Use the Arrow Keys (or WASD) to move the farmer and pick up falling produce and avoid falling obstacles like squirrels, sickles, and wasps! Pick up power-ups to help you on your harvesting journey: granting you super speed, gloves to pick up obstacles, or baskets that collect all produce on screen!",
+      "screenshots": [
+        "/img/lgh2026/harvest-havoc/havest-havoc-1.png",
+        "/img/lgh2026/harvest-havoc/havest-havoc-2.png",
+        "/img/lgh2026/harvest-havoc/havest-havoc-3.png",
+        "/img/lgh2026/harvest-havoc/havest-havoc-4.png"
+      ]
+    },
+    {
+      "title": "Life Life",
+      "creator": "Alex Garbus & Friends",
+      "description": "The unrealistic life sim for unrealistic lives!",
+      "screenshots": [
+        "/img/lgh2026/life-life/life-life-1.png",
+        "/img/lgh2026/life-life/life-life-2.png"
+      ]
+    },
+    {
+      "title": "cloud uprising",
+      "creator": "natalie skye hill / loungegames",
+      "description": "cloud uprising is a precision platformer centered around endless jumps across single use platforms. The game has 16 worlds, each introducing new mechanics/enemies, such as robotic birds with extending beaks, lines with lightning bolts running through them, and a spinning enemy which the player can bounce across but also must avoid the spikes of. It features an entirely crayon-drawn aesthetic, and a story about weather control, as metaphor for the free and open internet. In this game, the scientist Professor Cline invents weather control, pleasing the gods who deliver the weather, but angering their boss, Mr Glacier, who wants to keep his control. The player follows Brennan, the god of rain, as he looks to overthrow his boss, allowing for the use of Prof. Cline’s invention to benefit humanity.",
+      "screenshots": [
+        "/img/lgh2026/cloud-uprising/cloud-uprising-1.png",
+        "/img/lgh2026/cloud-uprising/cloud-uprising-2.png",
+        "/img/lgh2026/cloud-uprising/cloud-uprising-3.png",
+        "/img/lgh2026/cloud-uprising/cloud-uprising-4.png"
+      ]
+    },
+    {
+      "title": "Roll-A-Bout",
+      "creator": "MetaJ92",
+      "description": "Roll your way to mastering 4 levels by grabbing the 5 gems and tumbling to the goal. Beat your best time!",
+      "screenshots": [
+        "/img/lgh2026/roll-a-bout/roll-a-bout-1.png",
+        "/img/lgh2026/roll-a-bout/roll-a-bout-2.png",
+        "/img/lgh2026/roll-a-bout/roll-a-bout-3.png"
+      ]
+    },
+    {
+      "title": "Hail of Hexes",
+      "creator": "Puffin Piling Games",
+      "description": "Hail of Hexes is a time survival, Gradius-style cast-em-up, inspired by Vampire Survivors, and other similar games, featuring entirely original hand-drawn art.",
+      "screenshots": [
+        "/img/lgh2026/hail-of-hexes/hail-of-hexes-1.png",
+        "/img/lgh2026/hail-of-hexes/hail-of-hexes-2.png",
+        "/img/lgh2026/hail-of-hexes/hail-of-hexes-3.png",
+        "/img/lgh2026/hail-of-hexes/hail-of-hexes-4.png",
+        "/img/lgh2026/hail-of-hexes/hail-of-hexes-5.png",
+        "/img/lgh2026/hail-of-hexes/hail-of-hexes-6.png"
+      ]
+    },
+    {
+      "title": "Brew Avenue",
+      "creator": "Sylnt Studios",
+      "description": "High-speed vertical shoot em' up bullet curtain game",
+      "screenshots": [
+        "/img/lgh2026/brew-avenue/brew-avenue-1.png"
+      ]
+    },
+    {
+      "title": "Makealotl Music",
+      "creator": "Kristen Salas",
+      "description": "Makealotl Music is a collection of edutainment web games. Come play with Delia as you make, match and explore musical concepts.",
+      "screenshots": [
+        "/img/lgh2026/makealotl-music/makealotl-music-1.png",
+        "/img/lgh2026/makealotl-music/makealotl-music-2.png",
+        "/img/lgh2026/makealotl-music/makealotl-music-3.png"
+      ]
+    },
+    {
+      "title": "Untitled Pirate Tactics Game",
+      "creator": "Keaton Smith, Houston Miller",
+      "description": "You command a diverse pirate crew in this Tactics-RPG, interacting with different parts of a ship for a tactical advantage. Units move on a small hex grid, while the ships they operate on occupy a 10x scaled hex grid on top. In this game, the battlefield is always changing!",
+      "screenshots": [
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-1.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-2.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-3.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-4.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-5.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-6.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-7.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-8.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-9.png",
+        "/img/lgh2026/untitled-pirate-tactics-game/pirate-tactics-10.png"
+      ]
+    },
+    {
+      "title": "Angel Clicker",
+      "creator": "oldflowerGames",
+      "description": "Angel Clicker is a short, relaxed incremental with (optional) rhythm elements. Build quirky buildings, collect divine resources, get attacked by aliens, and... Go on a date?!",
+      "screenshots": [
+        "/img/lgh2026/angel-clicker/angel-clicker-1.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-2.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-3.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-4.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-5.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-6.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-7.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-8.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-9.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-10.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-11.png",
+        "/img/lgh2026/angel-clicker/angel-clicker-12.png"
+      ]
+    },
+    {
+      "title": "GET ROTATED!",
+      "creator": "bad taste games",
+      "description": "spinny ball with a shooty frog",
+      "screenshots": [
+        "/img/lgh2026/get-rotated/get-rotated-1.png",
+        "/img/lgh2026/get-rotated/get-rotated-2.png",
+        "/img/lgh2026/get-rotated/get-rotated-3.png",
+        "/img/lgh2026/get-rotated/get-rotated-4.png",
+        "/img/lgh2026/get-rotated/get-rotated-5.png"
+      ]
+    },
+    {
+      "title": "The Triangle",
+      "creator": "Digital Hollow Interactive, LLC",
+      "description": "An interactive LED Triangle puzzle-like action game, controlled by a unique controller.",
+      "screenshots": [
+        "/img/lgh2026/the-triangle/the-triangle-1.png",
+        "/img/lgh2026/the-triangle/the-triangle-2.png",
+        "/img/lgh2026/the-triangle/the-triangle-3.png"
+      ]
+    },
+    {
+      "title": "twenty thousand irises",
+      "creator": "fufroom",
+      "description": "It is estimated that 20,000 Palestinian children have lost their lives in the conflict since 2023. Many remain unrecovered by their loved ones and are believed to still be under collapsed concrete rubble. Attendees of the event may press a single button to place a Faqqua Iris, the national flower of Palestine, in the scene to collectively create a tribute to the lost children and take a moment to reflect.",
+      "screenshots": [
+        "/img/lgh2026/twenty-thousand-irises/twenty-thousand-irises.png"
+      ]
+    }
+  ],
+  "noScreenshots": []
 }

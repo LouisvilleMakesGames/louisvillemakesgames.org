@@ -1,0 +1,13 @@
+{{#with (lookup site.campaigns "local-game-harvest-takeover") as |lghTakeover|}}
+{{#if lghTakeover.ctaUrl}}
+<meta http-equiv="Refresh" content="0; url='{{lghTakeover.ctaUrl}}'" />
+<script>
+  window.location.replace('{{lghTakeover.ctaUrl}}');
+</script>
+{{else}}
+<meta http-equiv="Refresh" content="0; url='/local-game-harvest-2026'" />
+<script>
+  window.location.replace('/local-game-harvest-2026');
+</script>
+{{/if}}
+{{/with}}
