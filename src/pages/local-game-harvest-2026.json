@@ -17,6 +17,14 @@
   },
   "lgh": [
     {
+        "title": "Just Add Guns",
+        "creator": "Mommy's Best Games",
+        "description": "",
+        "screenshots": [
+          "/img/lgh2026/just-add-guns/just-add-guns.png"
+        ]
+      },
+    {
       "title": "Spell",
       "creator": "Ebenie and Rayya Brown",
       "description": "Linguistics based digital board game",
@@ -186,6 +194,36 @@
       "description": "It is estimated that 20,000 Palestinian children have lost their lives in the conflict since 2023. Many remain unrecovered by their loved ones and are believed to still be under collapsed concrete rubble. Attendees of the event may press a single button to place a Faqqua Iris, the national flower of Palestine, in the scene to collectively create a tribute to the lost children and take a moment to reflect.",
       "screenshots": [
         "/img/lgh2026/twenty-thousand-irises/twenty-thousand-irises.png"
+      ]
+    },
+    {
+      "title": "The Magic Bookstore",
+      "creator": "Dream Distillery Games",
+      "description": "The Magic Bookstore is a cozy game, like Stardew Valley or Animal Crossing, but you play as a witch managing a bookstore and discovering magical secrets!",
+      "screenshots": [
+        "/img/lgh2026/the-magic-bookstore/the-magic-bookstore-1.jpg",
+        "/img/lgh2026/the-magic-bookstore/the-magic-bookstore-2.jpg",
+        "/img/lgh2026/the-magic-bookstore/the-magic-bookstore-3.jpg",
+        "/img/lgh2026/the-magic-bookstore/the-magic-bookstore-4.jpg"
+      ]
+    },
+    {
+      "title": "The End of Fall",
+      "creator": "Glenn Essex",
+      "description": "A short game poem about the onset of winter.",
+      "screenshots": [
+        "/img/lgh2026/the-end-of-fall/fall.jpg"
+      ]
+    },
+    {
+      "title": "Fruit Swarm",
+      "creator": "Tanuki Suit Up",
+      "description": "",
+      "screenshots": [
+        "/img/lgh2026/fruit-swarm/fruit-swarm-1.png",
+        "/img/lgh2026/fruit-swarm/fruit-swarm-2.png",
+        "/img/lgh2026/fruit-swarm/fruit-swarm-3.png",
+        "/img/lgh2026/fruit-swarm/fruit-swarm-4.png"
       ]
     }
   ],
